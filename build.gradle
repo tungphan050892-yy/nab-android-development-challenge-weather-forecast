@@ -1,114 +1,126 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.versions = [
+            'kotlin'                : '1.6.10',
+            'gradle'                : '7.1.3',
+            'compileSdk'            : 32,
+            'targetSdk'             : 32,
+            'minSdk'                : 22,
+
+            'firebase'              : '29.3.1',
+
+            'androidx'              : [
+                    'core'             : '2.1.0',
+                    'appcompat'        : '1.4.1',
+                    'annotation'       : '1.3.0',
+                    'viewpager'        : '1.0.0',
+                    'viewpager2'       : '1.0.0',
+                    'percentlayout'    : '1.0.0',
+                    'recyclerview'     : '1.2.1',
+                    'lifecycle'        : '2.4.1',
+                    'lifecycle_ktx'    : '2.4.1',
+                    'test_core'        : '1.1.3',
+                    'test_runner'      : '1.4.0',
+                    'test_rules'       : '1.4.0',
+                    'work'             : '2.7.1',
+                    'ktx'              : '1.7.0',
+                    'constraint_layout': '2.1.3',
+                    'design'           : '1.5.0',
+                    'exifinterface'    : '1.3.3',
+                    'navigation'       : '2.4.2',
+                    'fragment'         : '1.4.1',
+                    'activity'         : '1.4.0',
+                    'data_store'       : '1.0.0',
+                    'splash_screen'    : '1.0.0-beta02',
+                    'chrome_tabs'      : '1.3.0',
+                    'compose'          : '1.1.1'
+            ],
+
+            'network'               : [
+                    'okhttp'                  : '4.9.3',
+                    'okhttp_urlconnection'    : '4.9.3',
+                    'okio'                    : '3.0.0',
+                    'retrofit'                : '2.9.0',
+                    // hosted only on jcenter and no longer maintained
+                    // possible future replacement: https://github.com/appmattus/certificatetransparency
+                    'certificate_transparency': '0.3.0',
+                    'resilience'              : '1.7.1'
+            ],
+
+            'logging'               : [
+                    'timber'      : '5.0.1',
+                    'slf4j'       : '1.7.36',
+                    'slf4j_timber': '1.0.1'
+            ],
+
+            'tracking'              : [
+                    'segment'          : '4.10.4',
+                    'segment_firebase' : '2.3.2',
+                    'segment_appsflyer': '6.5.2',
+                    'beagle_native'    : '1.5.9'
+            ],
+
+            'dev'                   : [
+                    'stetho': '1.6.0'
+            ],
+
+            'test'                  : [
+                    'junit'          : '4.13.2',
+                    'hamcrest'       : '2.2',
+                    'mockito'        : '4.4.0',
+                    'mockito_kt'     : '2.2.0',
+                    'mockk'          : '1.12.3',
+                    'mockk_android'  : '1.12.3',
+                    'coroutines_test': '1.6.1',
+            ],
+
+            'koin'                  : '3.1.5',
+            'room'                  : '2.4.2',
+            'picasso'               : '2.71828',
+            'espresso'              : '3.4.0',
+            'coroutines'            : '1.6.1',
+            'gson'                  : '2.9.0',
+            'ktlint'                : '0.41.0'
+    ]
+
+    repositories {
+        google()
+        jcenter()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${versions.gradle}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    }
+
+
+}
+
 plugins {
-    id 'com.android.application' version '7.2.0' apply false
-    id 'com.android.library' version '7.2.0' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
     id "com.diffplug.gradle.spotless" version "4.0.1"
 }
 
-ext.versions = [
-        'kotlin'                : '1.6.10',
-        'gradle'                : '7.1.3',
-        'compileSdk'            : 32,
-        'targetSdk'             : 32,
-        'minSdk'                : 22,
+subprojects {
+    apply plugin: 'com.diffplug.gradle.spotless'
+    spotless {
+        kotlin {
+            target "**/*.kt"
+            ktlint(versions.ktlint)
+        }
+    }
 
-        'firebase'              : '29.3.1',
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = '1.8'
 
-        'androidx'              : [
-                'core'             : '2.1.0',
-                'appcompat'        : '1.4.1',
-                'annotation'       : '1.3.0',
-                'viewpager'        : '1.0.0',
-                'viewpager2'       : '1.0.0',
-                'percentlayout'    : '1.0.0',
-                'recyclerview'     : '1.2.1',
-                'lifecycle'        : '2.4.1',
-                'lifecycle_ktx'    : '2.4.1',
-                'test_core'        : '1.1.3',
-                'test_runner'      : '1.4.0',
-                'test_rules'       : '1.4.0',
-                'work'             : '2.7.1',
-                'ktx'              : '1.7.0',
-                'constraint_layout': '2.1.3',
-                'design'           : '1.5.0',
-                'exifinterface'    : '1.3.3',
-                'navigation'       : '2.4.2',
-                'fragment'         : '1.4.1',
-                'activity'         : '1.4.0',
-                'data_store'       : '1.0.0',
-                'splash_screen'    : '1.0.0-beta02',
-                'chrome_tabs'      : '1.3.0',
-                'compose'          : '1.1.1'
-        ],
+            freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
 
-        'network'               : [
-                'okhttp'                  : '4.9.3',
-                'okhttp_urlconnection'    : '4.9.3',
-                'okio'                    : '3.0.0',
-                'retrofit'                : '2.9.0',
-                // hosted only on jcenter and no longer maintained
-                // possible future replacement: https://github.com/appmattus/certificatetransparency
-                'certificate_transparency': '0.3.0',
-                'resilience'              : '1.7.1'
-        ],
+            // Enable experimental coroutines APIs, including Flow
+            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi'
+            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.FlowPreview'
+            freeCompilerArgs += '-Xopt-in=kotlin.Experimental'
 
-        'logging'               : [
-                'timber'      : '5.0.1',
-                'slf4j'       : '1.7.36',
-                'slf4j_timber': '1.0.1'
-        ],
-
-        'tracking'              : [
-                'segment'          : '4.10.4',
-                'segment_firebase' : '2.3.2',
-                'segment_appsflyer': '6.5.2',
-                'beagle_native'    : '1.5.9'
-        ],
-
-        'dev'                   : [
-                'stetho': '1.6.0'
-        ],
-
-        'test'                  : [
-                'junit'          : '4.13.2',
-                'hamcrest'       : '2.2',
-                'mockito'        : '4.4.0',
-                'mockito_kt'     : '2.2.0',
-                'mockk'          : '1.12.3',
-                'mockk_android'  : '1.12.3',
-                'coroutines_test': '1.6.1',
-        ],
-
-        'koin'                  : '3.1.5',
-        'room'                  : '2.4.2',
-        'picasso'               : '2.71828',
-        'espresso'              : '3.4.0',
-        'coroutines'            : '1.6.1',
-        'gson'                  : '2.9.0',
-        'ktlint'                : '0.41.0'
-]
-
-//subprojects {
-//    apply plugin: 'com.diffplug.gradle.spotless'
-//    spotless {
-//        kotlin {
-//            target "**/*.kt"
-//            ktlint(versions.ktlint)
-//        }
-//    }
-//
-//    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-//        kotlinOptions {
-//            jvmTarget = '1.8'
-//
-//            freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
-//
-//            // Enable experimental coroutines APIs, including Flow
-//            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi'
-//            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.FlowPreview'
-//            freeCompilerArgs += '-Xopt-in=kotlin.Experimental'
-//
-//        }
-//    }
-//}
+        }
+    }
+}

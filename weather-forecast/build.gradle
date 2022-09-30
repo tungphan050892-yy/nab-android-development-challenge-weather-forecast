@@ -1,25 +1,28 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
 }
 
 android {
-    compileSdk 32
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        applicationId "vn.nab.innovation.center.assignment.android.weather_forecast"
-        minSdk 23
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"https://api.openweathermap.org/data/2.5\""
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://api.openweathermap.org/data/2.5\""
         }
     }
     compileOptions {
@@ -28,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
     }
 }
 
@@ -44,6 +50,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.androidx.lifecycle}"
+
+    //network
+    implementation "com.squareup.retrofit2:retrofit:${versions.network.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.network.retrofit}"
+    implementation "com.google.code.gson:gson:${versions.gson}"
 
     //DI
     implementation "io.insert-koin:koin-android:${versions.koin}"
