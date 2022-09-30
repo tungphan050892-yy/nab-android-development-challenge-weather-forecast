@@ -6,17 +6,17 @@ import com.google.gson.annotations.SerializedName
 data class DailyWeatherResponseDTO(
     @SerializedName("city")
     @Expose
-    var city: CityDTO? = null,
+    val city: CityDTO? = null,
     @SerializedName("cod")
     @Expose
-    var cod: String? = null,
+    val cod: String? = null,
     @SerializedName("message")
     @Expose
-    var message: Double? = null,
+    val message: Double? = null,
     @SerializedName("cnt")
     @Expose
-    var cnt: Int? = null,
+    val cnt: Int? = null,
     @SerializedName("list")
     @Expose
-    var list: List<ListDTO>? = null
+    val list: List<ListDTO>? = null
 )

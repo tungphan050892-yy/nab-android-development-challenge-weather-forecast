@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName
 data class CoordDTO(
     @SerializedName("lon")
     @Expose
-    var lon: Double? = null,
+    val lon: Double? = null,
     @SerializedName("lat")
     @Expose
-    var lat: Double? = null
+    val lat: Double? = null
 )

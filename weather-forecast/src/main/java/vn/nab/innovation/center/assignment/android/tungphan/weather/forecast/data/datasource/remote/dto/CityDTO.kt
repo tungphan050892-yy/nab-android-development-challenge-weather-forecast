@@ -6,20 +6,20 @@ import com.google.gson.annotations.SerializedName
 data class CityDTO(
     @SerializedName("id")
     @Expose
-    var id: Int? = null,
+    val id: Int? = null,
     @SerializedName("name")
     @Expose
-    var name: String? = null,
+    val name: String? = null,
     @SerializedName("coord")
     @Expose
-    var coord: CoordDTO? = null,
+    val coord: CoordDTO? = null,
     @SerializedName("country")
     @Expose
-    var country: String? = null,
+    val country: String? = null,
     @SerializedName("population")
     @Expose
-    var population: Int? = null,
+    val population: Int? = null,
     @SerializedName("timezone")
     @Expose
-    var timezone: Int? = null
+    val timezone: Int? = null
 )

@@ -2,7 +2,6 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.Weather
 
 //These todo is for the DTO package, not just this data class
 //TODO: consider to short out only the data which need for the app to process instead of mapping all the json data return
@@ -11,44 +10,44 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
 data class ListDTO(
     @SerializedName("dt")
     @Expose
-    var dt: Int? = null,
+    val dt: Int? = null,
     @SerializedName("sunrise")
     @Expose
-    var sunrise: Int? = null,
+    val sunrise: Int? = null,
     @SerializedName("sunset")
     @Expose
-    var sunset: Int? = null,
+    val sunset: Int? = null,
     @SerializedName("temp")
     @Expose
-    var temp: TempDTO? = null,
+    val temp: TempDTO? = null,
     @SerializedName("feels_like")
     @Expose
-    var feelsLike: FeelsLikeDTO? = null,
+    val feelsLike: FeelsLikeDTO? = null,
     @SerializedName("pressure")
     @Expose
-    var pressure: Int? = null,
+    val pressure: Int? = null,
     @SerializedName("humidity")
     @Expose
-    var humidity: Int? = null,
+    val humidity: Int? = null,
     @SerializedName("weather")
     @Expose
-    var weather: List<WeatherDTO>? = null,
+    val weather: List<WeatherDTO>? = null,
     @SerializedName("speed")
     @Expose
-    var speed: Double? = null,
+    val speed: Double? = null,
     @SerializedName("deg")
     @Expose
-    var deg: Int? = null,
+    val deg: Int? = null,
     @SerializedName("gust")
     @Expose
-    var gust: Double? = null,
+    val gust: Double? = null,
     @SerializedName("clouds")
     @Expose
-    var clouds: Int? = null,
+    val clouds: Int? = null,
     @SerializedName("pop")
     @Expose
-    var pop: Double? = null,
+    val pop: Double? = null,
     @SerializedName("rain")
     @Expose
-    var rain: Double? = null
+    val rain: Double? = null
 )
