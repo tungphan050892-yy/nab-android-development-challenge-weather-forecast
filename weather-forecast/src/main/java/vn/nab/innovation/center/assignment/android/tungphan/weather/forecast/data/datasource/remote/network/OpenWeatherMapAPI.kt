@@ -13,7 +13,7 @@ interface OpenWeatherMapAPI {
 
     //region get daily fore cast
     @GET("/forecast/daily?q={location}&cnt={cnt}")
-    suspend fun getDailyForecast(
+    suspend fun getDailyWeatherData(
         @Path("location") location: String,
         @Path("cnt") cnt: String
     ): Response<WeatherDataDTO>

@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.theme.AppTheme
 
 @Composable
 fun ErrorSnackBar(snackBarData: SnackbarData) {

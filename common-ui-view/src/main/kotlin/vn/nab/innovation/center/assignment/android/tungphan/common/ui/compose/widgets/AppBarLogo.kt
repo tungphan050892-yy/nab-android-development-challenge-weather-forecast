@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import ch.tutti.common.ui.R
+import vn.nab.innovation.center.assignment.android.tungphan.common.ui.R
 
 @Composable
 fun AppBarLogo(
