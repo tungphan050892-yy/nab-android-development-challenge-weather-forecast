@@ -3,22 +3,21 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.Weather
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 
 /**
  * Interface representing search local data source.
  */
 interface WeatherLocalDataSource {
     /**
-     * Returns [Flow] object containing [Weather] objects.
+     * Returns [Flow] object containing [] objects.
      */
-    val weathers: Flow<Weather?>
+    val weatherData: Flow<WeatherData?>
 
     /**
      * Sets provided search arguments inside the persistence solution.
      */
-    suspend fun setSearchArguments(
-        weather: Weather
-    )
+    suspend fun setSearchArguments(weatherData: WeatherData)
 }
 
 /**
@@ -27,13 +26,11 @@ interface WeatherLocalDataSource {
  */
 class WeatherLocalDataStoreImpl : WeatherLocalDataSource {
 
-    private val _weathers: MutableStateFlow<Weather?> = MutableStateFlow(null)
+    private val _weatherData: MutableStateFlow<WeatherData?> = MutableStateFlow(null)
 
-    override val weathers: Flow<Weather?> = _weathers
+    override val weatherData: Flow<WeatherData?> = _weatherData
 
-    override suspend fun setSearchArguments(
-        weathers: Weather,
-    ) {
-        _weathers.value = weathers
+    override suspend fun setSearchArguments(weatherData: WeatherData) {
+        _weatherData.value = weatherData
     }
 }
