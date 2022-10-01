@@ -11,7 +11,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
  */
 class GetDailyWeatherDataNetworkRequest(
     private val connectionChecker: ConnectionChecker,
-    private val oneWeatherMapApi: OpenWeatherMapApi
+    private val oneWeatherMapApi: OpenWeatherMapAPI
 ) : NetworkRequest<WeatherData, GetDailyWeatherDataParams> by simpleNetworkRequest(
     connectionChecker = connectionChecker,
     lambdaCall = { params ->

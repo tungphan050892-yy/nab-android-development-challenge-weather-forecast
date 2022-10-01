@@ -1,9 +1,11 @@
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network
+
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.WeatherDataDTO
 
-interface OpenWeatherMapApi {
+interface OpenWeatherMapAPI {
 
     //region get daily weather data
     @GET("/forecast/daily?q={location}&cnt={cnt}")
