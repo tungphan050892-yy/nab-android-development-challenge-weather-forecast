@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Components-->
+    <!--Input Fields-->
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="boxStrokeColor">?colorOnSurface</item>
+        <item name="hintTextColor">?colorOnSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="editTextStyle">@style/Widget.App.TextInputEditText</item>
+        <item name="colorPrimary">?colorOnSurface</item>
+    </style>
+
+    <style name="Widget.App.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">?attr/textAppearanceInputEditText</item>
+    </style>
+
+    <!--Bottom Sheets-->
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.App.BottomSheet.Modal</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/Widget.App.BottomSheet.Modal</item>
+        <item name="android:navigationBarColor">@color/greyscale_00</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            @android:color/transparent
+        </item>
+    </style>
+
+    <style name="Widget.App.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceLargeComponent</item>
+    </style>
+
+    <!-- Alert dialogs -->
+    <style name="ThemeOverlay.App.AlertDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowTitleStyle">@style/ThemeOverlay.App.AlertDialog.Title</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.AlertDialog.TextButton
+        </item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.AlertDialog.TextButton
+        </item>
+    </style>
+
+    <style name="ThemeOverlay.App.AlertDialog.Title" parent="">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/greyscale_20</item>
+    </style>
+
+    <style name="Widget.App.AlertDialog.TextButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/greyscale_20</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="rippleColor">@color/greyscale_75</item>
+    </style>
+
+    <!--Navigation Drawer-->
+    <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?colorToolbarBackground</item>
+        <item name="titleTextAppearance">?textAppearanceHeadline3</item>
+        <item name="subtitleTextAppearance">?textAppearanceHeadline4</item>
+        <item name="android:elevation">@dimen/one_grid_unit</item>
+    </style>
+
+    <!-- AppBarLayout -->
+    <style name="Widget.App.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:background">?colorToolbarBackground</item>
+        <item name="titleTextAppearance">?textAppearanceHeadline3</item>
+    </style>
+
+    <!-- PopupTheme -->
+    <style name="ThemeOverlay.App.PopupTheme" parent="">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Color palette-->
+
+    <color name="purple_200">#bb86fc</color> <!--Color primary (dark)-->
+    <color name="purple_500">#6200ee</color> <!--Color primary (light)-->
+    <color name="purple_600">#4b01d0</color> <!--Color primary variant (dark)-->
+    <color name="purple_700">#3700b3</color> <!--Color primary variant (light)-->
+
+    <color name="green_200">#03dac6</color> <!--Color secondary-->
+    <color name="green_500">#018786</color> <!--Color secondary variant-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">#000000</color>
+
+    <!--App Color palette-->
+
+    <color name="base_10">#ff0d131a</color>
+    <color name="base_20">#ff1c2633</color>
+    <color name="base_30">#ff2e3c4d</color>
+    <color name="base_40">#ff425366</color>
+    <color name="base_50">#ff596b80</color>
+    <color name="base_60">#ff738499</color>
+    <color name="base_70">#ff8f9fb3</color>
+    <color name="base_80">#ffadbbcc</color>
+    <color name="base_90">#ffcfd9e6</color>
+    <color name="base_95">#ffe6ecf2</color>
+    <color name="base_99">#fffafbfc</color>
+
+    <color name="blue_10">#ff001e2d</color>
+    <color name="blue_20">#ff003d5b</color>
+    <color name="blue_30">#ff005b89</color>
+    <color name="blue_40">#ff007ab7</color>
+    <color name="blue_50">#ff0099e5</color>
+    <color name="blue_60">#ff33adea</color>
+    <color name="blue_70">#ff66c1ef</color>
+    <color name="blue_80">#ff99d6f4</color>
+    <color name="blue_90">#ffcceaf9</color>
+    <color name="blue_95">#ffe6f5fc</color>
+
+    <color name="green_10">#ff082000</color>
+    <color name="green_20">#ff104100</color>
+    <color name="green_30">#ff186100</color>
+    <color name="green_40">#ff218200</color>
+    <color name="green_50">#ff24a300</color>
+    <color name="green_60">#ff52b532</color>
+    <color name="green_70">#ff7dc766</color>
+    <color name="green_80">#ffa8da99</color>
+    <color name="green_90">#ffd3eccc</color>
+
+    <color name="greyscale_00">#ff000000</color>
+    <color name="greyscale_20">#ff333333</color>
+    <color name="greyscale_30">#ff4d4d4d</color>
+    <color name="greyscale_40">#ff666666</color>
+    <color name="greyscale_50">#ff808080</color>
+    <color name="greyscale_60">#ff999999</color>
+    <color name="greyscale_70">#ffb2b2b2</color>
+    <color name="greyscale_75">#ffbfbfbf</color>
+    <color name="greyscale_80">#ffcccccc</color>
+    <color name="greyscale_85">#ffd9d9d9</color>
+    <color name="greyscale_90">#ffe5e5e5</color>
+    <color name="greyscale_95">#fff2f2f2</color>
+    <color name="greyscale_99">#fffcfcfc</color>
+    <color name="greyscale_100">#ffffffff</color>
+
+    <color name="orange_10">#ff301808</color>
+    <color name="orange_20">#ff613110</color>
+    <color name="orange_30">#ff914919</color>
+    <color name="orange_40">#ffc26221</color>
+    <color name="orange_50">#fff27a29</color>
+    <color name="orange_60">#fff59554</color>
+    <color name="orange_70">#fff7af7f</color>
+    <color name="orange_80">#fffacaa9</color>
+    <color name="orange_90">#fffce4d4</color>
+
+    <color name="purple_10">#ff1f152f</color>
+    <color name="purple_20">#ff3f2b5f</color>
+    <color name="purple_30">#ff5e408e</color>
+    <color name="purple_40">#ff7e56be</color>
+    <color name="purple_50">#ff9d6bed</color>
+    <color name="purple_60">#ffb189f1</color>
+    <color name="purple_70">#ffc4a6f4</color>
+    <color name="purple_80">#ffd8c4f8</color>
+    <color name="purple_90">#ffebe1fb</color>
+
+    <color name="red_10">#ff2e0807</color>
+    <color name="red_20">#ff5e1010</color>
+    <color name="red_30">#ff8d1a18</color>
+    <color name="red_40">#ffbc2320</color>
+    <color name="red_50">#ffed2c28</color>
+    <color name="red_60">#ffef4d4a</color>
+    <color name="red_70">#fff27e7c</color>
+    <color name="red_80">#fff7a8a8</color>
+    <color name="red_90">#fffad3d3</color>
+
+    <color name="yellow_10">#ff332801</color>
+    <color name="yellow_20">#ff665102</color>
+    <color name="yellow_30">#ff997903</color>
+    <color name="yellow_40">#ffcca204</color>
+    <color name="yellow_50">#ffffcb05</color>
+    <color name="yellow_60">#ffffd537</color>
+    <color name="yellow_70">#ffffdf69</color>
+    <color name="yellow_80">#ffffea9b</color>
+    <color name="yellow_90">#fffff4cd</color>
+    <color name="yellow_95">#fffff9e6</color>
+
+    <color name="status_bar_color">#eaeaea</color> <!-- TODO(Copied from app's module) -->
+</resources>

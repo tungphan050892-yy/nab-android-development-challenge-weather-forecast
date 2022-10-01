@@ -1,0 +1,65 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+
+        minSdkVersion versions.minSdk
+    }
+
+    lintOptions {
+        htmlReport true
+        htmlOutput file("build/reports/lint-report.html")
+        // Don't abort if Lint finds an error, otherwise the Jenkins build
+        // will be marked as failed, and Jenkins won't analyse the Lint output
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.androidx.compose
+        kotlinCompilerVersion versions.kotlin
+    }
+}
+
+dependencies {
+
+    api "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
+    api ("com.google.android.material:material:${versions.androidx.design}"){
+        // Exclude bundled app compat to include app's with ActivityResult api support
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+
+    // Compose
+    api "androidx.compose.ui:ui:${versions.androidx.compose}"
+    api "androidx.compose.material:material:${versions.androidx.compose}"
+    api "androidx.compose.runtime:runtime-livedata:${versions.androidx.compose}"
+    debugApi "androidx.compose.ui:ui-tooling:${versions.androidx.compose}"
+    api "androidx.compose.ui:ui-tooling-preview:${versions.androidx.compose}"
+    api "androidx.activity:activity-compose:${versions.androidx.activity}"
+    api "androidx.navigation:navigation-compose:${versions.androidx.navigation}"
+    api "androidx.compose.animation:animation:${versions.androidx.compose}"
+    api "androidx.compose.material:material-icons-extended:${versions.androidx.compose}"
+}
