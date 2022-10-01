@@ -5,13 +5,13 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.WeatherDataDTO
 
-/*
-* As scope of this assignment, I use https://openweathermap.org/ as 3rd party provide data & API
-* For the API key, I registered it with freemium account
-*/
-interface OpenWeatherMapAPI {
+/**
+ * Interface to use with Retrofit2 and calling API from OneWeatherMap.org
+ */
+interface WeatherMapAPI {
 
-    //region get daily fore cast
+    //region get daily weather data
+    //this API is not usable for free user
     @GET("/forecast/daily?q={location}&cnt={cnt}")
     suspend fun getDailyWeatherData(
         @Path("location") location: String,
@@ -25,4 +25,5 @@ interface OpenWeatherMapAPI {
         @Path("location") location: String
     ): Response<WeatherDataDTO>
     //endregion
+
 }
