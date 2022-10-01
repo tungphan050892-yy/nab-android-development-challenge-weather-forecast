@@ -7,8 +7,8 @@ import kotlinx.coroutines.withContext
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.WeatherLocalDataSource
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.WeatherRemoteDataSource
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.DEFAULT_DAILY_WEATHER
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.WeatherData
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.DEFAULT_DAILY_WEATHER
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.repository.WeatherDataRepository
 
 class WeatherDataProvider(

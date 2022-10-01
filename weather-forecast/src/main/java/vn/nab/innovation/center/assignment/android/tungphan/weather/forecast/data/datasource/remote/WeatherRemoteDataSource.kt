@@ -1,7 +1,7 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote
 
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.WeatherData
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 
 interface WeatherRemoteDataSource {
 

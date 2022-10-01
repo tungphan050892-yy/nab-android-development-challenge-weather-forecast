@@ -1,4 +1,4 @@
-package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity
 
 //TODO: instead of nullable field, return default empty instance and remove nullable
 data class City(

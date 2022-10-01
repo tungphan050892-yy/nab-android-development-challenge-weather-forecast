@@ -1,4 +1,4 @@
-package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity
 
 data class Wind(
     var speed: Double? = null,

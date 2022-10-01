@@ -1,7 +1,7 @@
-package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mappers
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mapper
 
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.CoordDTO
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.Coordinate
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.Coordinate
 
 fun CoordDTO?.toEntityObject() = Coordinate(
     lon = this?.lon ?: 0.0,

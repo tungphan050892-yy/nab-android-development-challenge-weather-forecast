@@ -1,4 +1,4 @@
-package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity
 
 //Naming like this so it will not be duplicate with kotlin.collection type: List
 data class ListEntity(

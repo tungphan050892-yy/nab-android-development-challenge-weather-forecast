@@ -7,7 +7,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResul
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.networkrequest.GetDailyWeatherDataParams
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.networkrequest.GetThreeHoursStepWeatherDataParams
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.networkrequest.NetworkRequest
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.WeatherData
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 
 class WeatherRemoteDataSourceImpl(
     private val getDailyWeatherDataNetworkRequest: NetworkRequest<WeatherData, GetDailyWeatherDataParams>,

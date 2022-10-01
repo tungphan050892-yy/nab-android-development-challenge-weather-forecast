@@ -2,7 +2,7 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.Weather
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.Weather
 
 /**
  * Interface representing search local data source.

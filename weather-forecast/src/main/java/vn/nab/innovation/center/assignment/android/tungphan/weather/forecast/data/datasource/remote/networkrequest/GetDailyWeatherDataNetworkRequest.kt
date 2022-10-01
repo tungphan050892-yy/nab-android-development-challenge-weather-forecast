@@ -1,10 +1,10 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.networkrequest
 
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mappers.toEntityObject
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mapper.toEntityObject
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.ConnectionChecker
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.OpenWeatherMapApi
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.WeatherData
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 
 /**
  * [NetworkRequest] responsible to get daily weather data from one weather map API

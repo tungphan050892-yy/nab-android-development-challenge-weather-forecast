@@ -1,7 +1,7 @@
-package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mappers
+package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mapper
 
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.MainDTO
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.Main
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.Main
 
 fun MainDTO.toEntityObject() = Main(
     temp = this.temp,
