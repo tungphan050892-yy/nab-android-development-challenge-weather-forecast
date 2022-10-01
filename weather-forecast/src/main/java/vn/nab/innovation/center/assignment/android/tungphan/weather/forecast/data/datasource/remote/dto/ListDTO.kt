@@ -49,5 +49,20 @@ data class ListDTO(
     val pop: Double? = null,
     @SerializedName("rain")
     @Expose
-    val rain: Double? = null
+    val rain: Double? = null,
+    @SerializedName("main")
+    @Expose
+    val main: MainDTO? = null,
+    @SerializedName("visibility")
+    @Expose
+    val visibility: Int? = null,
+    @SerializedName("sys")
+    @Expose
+    val sys: SysDTO? = null,
+    @SerializedName("dt_txt")
+    @Expose
+    val dtTxt: String? = null,
+    @SerializedName("wind")
+    @Expose
+    val wind: WindDTO? = null
 )

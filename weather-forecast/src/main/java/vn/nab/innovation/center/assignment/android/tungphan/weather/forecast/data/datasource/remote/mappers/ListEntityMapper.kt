@@ -1,8 +1,7 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mappers
 
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.ListDTO
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.FeelsLike
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.ListEntity
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.*
 
 fun ListDTO.toEntityObject() = ListEntity(
     dt = this.dt,
@@ -18,12 +17,10 @@ fun ListDTO.toEntityObject() = ListEntity(
     gust = this.gust,
     clouds = this.clouds,
     pop = this.pop,
-    rain = this.rain
-)
-
-val DEFAULT_FEELSLIKE = FeelsLike(
-    day = 0.0,
-    night = 0.0,
-    eve = 0.0,
-    morn = 0.0
+    rain = this.rain,
+    main = this.main?.toEntityObject(),
+    visibility = this.visibility,
+    sys = this.sys?.toEntityObject(),
+    dtTxt = this.dtTxt,
+    wind = this.wind?.toEntityObject()
 )

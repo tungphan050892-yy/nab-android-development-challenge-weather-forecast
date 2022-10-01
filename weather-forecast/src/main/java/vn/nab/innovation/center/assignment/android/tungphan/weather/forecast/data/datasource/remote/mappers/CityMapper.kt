@@ -3,11 +3,13 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.CityDTO
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entities.City
 
-fun CityDTO.toEntityObject() =  City(
+fun CityDTO.toEntityObject() = City(
     id = this.id,
     name = this.name,
     coordinate = this.coord.toEntityObject(),
     country = this.country,
     population = this.population,
-    timezone = this.timezone
+    timezone = this.timezone,
+    sunrise = this.sunrise,
+    sunset = this.sunset
 )

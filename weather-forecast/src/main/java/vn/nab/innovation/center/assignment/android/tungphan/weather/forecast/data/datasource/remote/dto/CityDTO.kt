@@ -21,5 +21,11 @@ data class CityDTO(
     val population: Int? = null,
     @SerializedName("timezone")
     @Expose
-    val timezone: Int? = null
+    val timezone: Int? = null,
+    @SerializedName("sunrise")
+    @Expose
+    val sunrise: Int? = null,
+    @SerializedName("sunset")
+    @Expose
+    val sunset: Int? = null
 )

@@ -9,3 +9,10 @@ fun FeelsLikeDTO.toEntityObject() = FeelsLike(
     eve = this.eve,
     morn = this.morn
 )
+
+val DEFAULT_FEELSLIKE = FeelsLike(
+    day = 0.0,
+    night = 0.0,
+    eve = 0.0,
+    morn = 0.0
+)
