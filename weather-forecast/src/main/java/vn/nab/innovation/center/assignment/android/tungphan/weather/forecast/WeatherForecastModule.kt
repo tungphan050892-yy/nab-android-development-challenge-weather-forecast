@@ -5,7 +5,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.AuthInterceptor
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.OpenWeatherMapAPI
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.WeatherMapAPI
 
 val weatherForecastModule = module {
 
@@ -24,6 +24,6 @@ fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient {
     return OkHttpClient().newBuilder().addInterceptor(authInterceptor).build()
 }
 
-fun provideForecastApi(retrofit: Retrofit): OpenWeatherMapAPI = retrofit.create(OpenWeatherMapAPI::class.java)
+fun provideForecastApi(retrofit: Retrofit): WeatherMapAPI = retrofit.create(WeatherMapAPI::class.java)
 
 
