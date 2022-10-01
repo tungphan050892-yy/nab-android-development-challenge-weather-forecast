@@ -16,3 +16,4 @@ rootProject.name = "NAB Weather Forecast"
 include ':app'
 include ":weather-forecast"
 include ':core'
+include ':common-ui-view'
