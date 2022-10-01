@@ -4,7 +4,6 @@ import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResul
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mapper.toEntityObject
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.ConnectionChecker
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.OpenWeatherMapAPI
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.OpenWeatherMapApi
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
 
 /**
