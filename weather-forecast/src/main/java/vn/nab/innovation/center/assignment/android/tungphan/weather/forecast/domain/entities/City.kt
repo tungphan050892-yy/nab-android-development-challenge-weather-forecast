@@ -7,5 +7,7 @@ data class City(
     var coordinate: Coordinate? = null,
     var country: String? = null,
     var population: Int? = null,
-    var timezone: Int? = null
+    var timezone: Int? = null,
+    var sunrise: Int? = null,
+    var sunset: Int? = null,
 )

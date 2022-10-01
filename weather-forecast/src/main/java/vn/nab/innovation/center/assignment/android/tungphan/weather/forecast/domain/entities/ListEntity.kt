@@ -15,5 +15,10 @@ data class ListEntity(
     var gust: Double? = null,
     var clouds: Int? = null,
     var pop: Double? = null,
-    var rain: Double? = null
+    var rain: Double? = null,
+    var main: Main? = null,
+    var visibility: Int? = null,
+    var sys: Sys? = null,
+    var dtTxt: String? = null,
+    var wind: Wind? = null,
 )

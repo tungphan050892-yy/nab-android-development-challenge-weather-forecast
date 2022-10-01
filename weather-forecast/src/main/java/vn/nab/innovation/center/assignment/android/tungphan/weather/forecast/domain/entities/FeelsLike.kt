@@ -6,3 +6,10 @@ data class FeelsLike(
     var eve: Double? = null,
     var morn: Double? = null
 )
+
+val DEFAULT_FEELSLIKE = FeelsLike(
+    day = 0.0,
+    night = 0.0,
+    eve = 0.0,
+    morn = 0.0
+)
