@@ -32,6 +32,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         compose true
     }
@@ -46,7 +47,6 @@ dependencies {
 
     implementation project(":core")
     implementation project(":common-ui-view")
-    implementation "androidx.core:core-ktx:${versions.androidx.ktx}"
     implementation "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
 
@@ -54,7 +54,6 @@ dependencies {
     implementation "androidx.activity:activity-compose:${versions.androidx.activity}"
     implementation "androidx.compose.material:material:${versions.androidx.compose}"
     implementation "androidx.compose.animation:animation:${versions.androidx.compose}"
-    implementation "androidx.compose.ui:ui-tooling:${versions.androidx.compose}"
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.androidx.lifecycle}"
