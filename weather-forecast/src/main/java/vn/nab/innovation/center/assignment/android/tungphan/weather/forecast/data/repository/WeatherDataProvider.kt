@@ -1,9 +1,6 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.repository
 
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.withContext
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.WeatherLocalDataSource
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.WeatherRemoteDataSource
@@ -13,8 +10,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
 
 class WeatherDataProvider(
     private val weatherLocalDataSource: WeatherLocalDataSource,
-    private val weatherRemoteDataSource: WeatherRemoteDataSource,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val weatherRemoteDataSource: WeatherRemoteDataSource
 ) : WeatherDataRepository {
 
     private val allWeatherData = MutableStateFlow(DEFAULT_DAILY_WEATHER)
@@ -22,7 +18,7 @@ class WeatherDataProvider(
     override suspend fun getDailyWeatherData(
         location: String,
         cnt: String
-    ): CallResult<WeatherData> = withContext(ioDispatcher) {
+    ): CallResult<WeatherData> {
         val result = weatherRemoteDataSource.getDailyWeatherData(
             location = location,
             cnt = cnt
@@ -32,18 +28,18 @@ class WeatherDataProvider(
                 this@WeatherDataProvider.allWeatherData.value = it
             }
         }
-        result
+        return result
     }
 
     override suspend fun getThreeHoursStepWeatherData(
         location: String
-    ): CallResult<WeatherData> = withContext(ioDispatcher) {
+    ): CallResult<WeatherData> {
         val result = weatherRemoteDataSource.getThreeHoursStepWeatherData(location)
         if (result.isSuccess) {
             result.getOrNull()?.let {
                 this@WeatherDataProvider.allWeatherData.value = it
             }
         }
-        result
+        return result
     }
 }

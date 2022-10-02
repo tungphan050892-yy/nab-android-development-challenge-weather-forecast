@@ -6,9 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -45,6 +44,7 @@ fun WeatherListScreen(
     val snackBarHostState = remember { SnackbarHostState() }
     val scaffoldState = rememberScaffoldState(snackbarHostState = snackBarHostState)
     val coroutineScope = rememberCoroutineScope()
+    var cityNameText by remember { mutableStateOf("") }
 
     Scaffold(
         snackbarHost = {
@@ -54,6 +54,27 @@ fun WeatherListScreen(
             )
         }
     ) {
+        TextField(
+            value = "",
+            onValueChange = {
+                cityNameText = it
+            },
+            label = { Text("Giving City Name Here, ex:\"Saigon\"") }
+        )
+
+        Button(
+            onClick = { /* ... */ },
+            // Uses ButtonDefaults.ContentPadding by default
+            contentPadding = PaddingValues(
+                start = AppTheme.dimensions.HALF_GRID_UNIT,
+                top = AppTheme.dimensions.HALF_GRID_UNIT,
+                end = AppTheme.dimensions.HALF_GRID_UNIT,
+                bottom = AppTheme.dimensions.HALF_GRID_UNIT
+            )
+        ) {
+            Text("Get Weather Forecast")
+        }
+
         WeatherListContent(
             weatherListState = weatherListState,
             coroutineScope = coroutineScope,
