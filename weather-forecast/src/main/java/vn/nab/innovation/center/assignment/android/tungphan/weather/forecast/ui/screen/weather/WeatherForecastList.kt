@@ -14,10 +14,11 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 
 @Composable
 fun WeatherForecastList(
+    celsiusDegree: String,
     weatherUIItems: List<WeatherItemUiModal>
 ) {
-    val itemsToDisplay: Map<String, WeatherItemUiModal> = weatherUIItems.associateBy {
-        it.dateString
+    val itemsToDisplay: Map<Int, WeatherItemUiModal> = weatherUIItems.associateBy {
+        it.datetime
     }
     LazyColumn(
         modifier = Modifier
@@ -25,16 +26,25 @@ fun WeatherForecastList(
             .background(AppTheme.colors.greyscale95)
     ) {
         itemsToDisplay.forEach { (_, item) ->
-            renderItem(weatherItemUiModal = item)
+            renderItem(
+                celsiusDegree = celsiusDegree,
+                weatherItemUiModal = item
+            )
         }
     }
 }
 
-private fun LazyListScope.renderItem(weatherItemUiModal: WeatherItemUiModal) {
+private fun LazyListScope.renderItem(
+    celsiusDegree: String,
+    weatherItemUiModal: WeatherItemUiModal
+) {
     item(
-        key = weatherItemUiModal.dateString.toInt(),
+        key = weatherItemUiModal.datetime,
         content = {
-            WeatherItemRow(weatherItemUiModal = weatherItemUiModal)
+            WeatherItemRow(
+                celsiusDegree = celsiusDegree,
+                weatherItemUiModal = weatherItemUiModal
+            )
             Divider(thickness = AppTheme.dimensions.HALF_QUARTER_GRID_UNIT)
         }
     )
@@ -42,6 +52,7 @@ private fun LazyListScope.renderItem(weatherItemUiModal: WeatherItemUiModal) {
 
 @Composable
 private fun WeatherItemRow(
+    celsiusDegree: String,
     weatherItemUiModal: WeatherItemUiModal
 //    onItemSelected: (weatherItemUIModal: weatherItemUIModal) -> Unit
 ) {
@@ -54,7 +65,7 @@ private fun WeatherItemRow(
     ) {
         Column {
             WeatherItemText("Date: ${weatherItemUiModal.dateString}")
-            WeatherItemText("Average Temperature: ${weatherItemUiModal.averageTemperature}")
+            WeatherItemText("Average Temperature: ${weatherItemUiModal.averageTemperature}$celsiusDegree")
             WeatherItemText("Pressure: ${weatherItemUiModal.pressure}")
             WeatherItemText("Humidity: ${weatherItemUiModal.humidity}")
             WeatherItemText("Description: ${weatherItemUiModal.description}")

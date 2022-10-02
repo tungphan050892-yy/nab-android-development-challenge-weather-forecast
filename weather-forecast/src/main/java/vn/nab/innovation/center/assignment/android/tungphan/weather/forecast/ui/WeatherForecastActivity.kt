@@ -19,8 +19,12 @@ class WeatherForecastActivity : AppCompatActivity() {
 
     private val viewModel: WeatherListViewModel by viewModel { parametersOf(this) }
 
-    private val screenTitle: String by lazy {
+    private val screenTitleTxt: String by lazy {
         resources.getString(R.string.app_name)
+    }
+
+    private val celsiusDegreeTxt: String by lazy {
+        resources.getString(R.string.celsius_degree)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,8 @@ class WeatherForecastActivity : AppCompatActivity() {
                 val weatherListScreenEvent: WeatherListScreenEvent? by viewModel.screenEvent.observeAsState()
 
                 WeatherListScreen(
-                    screenTitle = screenTitle,
+                    screenTitle = screenTitleTxt,
+                    celsiusDegree = celsiusDegreeTxt,
                     weatherListState = weatherListState,
                     weatherListScreenEvent = weatherListScreenEvent,
                     fetchThreeHoursStepWeatherData = {
@@ -43,9 +48,6 @@ class WeatherForecastActivity : AppCompatActivity() {
 //                    onItemSelected = { weatherItemUIModal ->
 //                        openWeatherItem(weatherItemUIModal)
 //                    },
-//                    onDeleteClicked = { weatherItemUIModal ->
-//                        displayConfirmDeleteDialog(weatherItemUIModal)
-//                    }
                 )
             }
         }

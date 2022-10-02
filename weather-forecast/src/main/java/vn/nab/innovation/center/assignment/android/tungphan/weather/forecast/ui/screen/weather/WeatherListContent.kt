@@ -14,6 +14,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 
 @Composable
 fun WeatherListContent(
+    celsiusDegree: String,
     weatherListState: ViewModelState,
     coroutineScope: CoroutineScope,
     scaffoldState: ScaffoldState,
@@ -27,6 +28,7 @@ fun WeatherListContent(
             is WeatherListViewModel.WeatherListState.Loading -> LoadingScreen()
             is WeatherListViewModel.WeatherListState.Loaded -> {
                 WeatherForecastList(
+                    celsiusDegree,
                     weatherListState.weatherItemUiModal ?: emptyList(),
 //                    onItemSelected
                 )
