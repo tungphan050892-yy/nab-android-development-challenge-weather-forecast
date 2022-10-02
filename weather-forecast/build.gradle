@@ -72,8 +72,15 @@ dependencies {
 
     //test
     testImplementation "junit:junit:${versions.test.junit}"
+    testImplementation "androidx.arch.core:core-testing:${versions.androidx.core}"
+    testImplementation "org.hamcrest:hamcrest-library:${versions.test.hamcrest}"
+    testImplementation "org.mockito:mockito-core:${versions.test.mockito}"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.test.mockito_kt}"
+    testImplementation "io.mockk:mockk:${versions.test.mockk}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
     androidTestImplementation "androidx.test.ext:junit:${versions.androidx.test_core}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+
 
 
 }

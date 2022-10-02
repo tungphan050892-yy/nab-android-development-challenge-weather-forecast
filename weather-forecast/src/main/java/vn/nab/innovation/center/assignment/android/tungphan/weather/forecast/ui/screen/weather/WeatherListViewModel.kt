@@ -14,7 +14,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 
 class WeatherListViewModel(
     private val getThreeHoursStepWeather: GetThreeHoursStepWeatherDataUseCase,
-    private val weatherItemUiModelMapper: WeatherItemUiModelMapper,
+    private val weatherItemUiModelMapper: WeatherItemUiModelMapper
 ) : ViewModel() {
 
     companion object {
