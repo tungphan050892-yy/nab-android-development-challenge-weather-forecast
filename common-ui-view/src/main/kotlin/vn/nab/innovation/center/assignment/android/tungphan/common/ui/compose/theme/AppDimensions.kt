@@ -18,6 +18,11 @@ object AppDimensions {
     val ONE_SIXTEENTH_GRID_UNIT: Dp by lazy { 0.5f.dp }
 
     /**
+     * 1 density pixels.
+     */
+    val HALF_QUARTER_GRID_UNIT: Dp by lazy { 1.dp }
+
+    /**
      * 2 density pixels.
      */
     val QUARTER_GRID_UNIT: Dp by lazy { 2.dp }

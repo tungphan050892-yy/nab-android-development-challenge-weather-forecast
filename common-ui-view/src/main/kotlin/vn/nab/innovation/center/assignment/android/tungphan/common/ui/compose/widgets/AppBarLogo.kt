@@ -20,7 +20,7 @@ fun AppBarLogo(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_logo),
+            painter = painterResource(id = R.drawable.ic_sad),
             contentDescription = null,
             modifier = Modifier
                 .padding(top = 10.dp, bottom = 10.dp)

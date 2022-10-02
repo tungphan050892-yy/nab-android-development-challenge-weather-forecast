@@ -3,6 +3,7 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.WeatherDataDTO
 
 /**
@@ -12,17 +13,17 @@ interface WeatherMapAPI {
 
     //region get daily weather data
     //this API is not usable for free user
-    @GET("forecast/daily?q={location}&cnt={cnt}")
+    @GET("forecast/daily")
     suspend fun getDailyWeatherData(
-        @Path("location") location: String,
-        @Path("cnt") cnt: String
+        @Query("q") location: String,
+        @Query("cnt") cnt: String
     ): Response<WeatherDataDTO>
     //endregion
 
     // region get three hours step weather data
-    @GET("forecast?q={location}")
+    @GET("forecast")
     suspend fun getThreeHoursStepWeatherData(
-        @Path("location") location: String
+        @Query("q") location: String
     ): Response<WeatherDataDTO>
     //endregion
 

@@ -17,6 +17,10 @@ class WeatherListViewModel(
     private val weatherItemUiModelMapper: WeatherItemUiModelMapper,
 ) : ViewModel() {
 
+    companion object {
+        const val DEFAULT_CITY_NAME = "saigon"
+    }
+
     private val logger = createLogger()
 
     private val _weatherDataState: MutableLiveData<WeatherListState> = MutableLiveData()
@@ -49,6 +53,7 @@ class WeatherListViewModel(
                 }
                 else -> {
                     val exception = result.exceptionOrNull() // TODO display error message
+                    logger.error(exception.toString())
                     _screenEvent.value = WeatherListScreenEvent.ShowError()
                 }
             }
