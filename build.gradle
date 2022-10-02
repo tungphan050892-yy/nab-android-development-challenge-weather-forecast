@@ -69,7 +69,9 @@ buildscript {
                     'mockito_kt'     : '2.2.0',
                     'mockk'          : '1.12.3',
                     'mockk_android'  : '1.12.3',
+                    'kluent'         : '1.68',
                     'coroutines_test': '1.6.1',
+                    'mock_web_server': '4.9.3',
             ],
 
             'koin'                  : '3.1.5',

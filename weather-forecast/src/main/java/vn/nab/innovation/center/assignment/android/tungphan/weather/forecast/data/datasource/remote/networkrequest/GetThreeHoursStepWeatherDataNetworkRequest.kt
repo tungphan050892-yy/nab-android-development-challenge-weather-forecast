@@ -14,7 +14,7 @@ class GetThreeHoursStepWeatherDataNetworkRequest(
     connectionChecker = connectionChecker,
     lambdaCall = { params ->
         val response = weatherMapApi.getThreeHoursStepWeatherData(
-            location = params.location
+            cityName = params.cityName
         )
 
         return@simpleNetworkRequest if (response.isSuccessful && response.body() != null) {
@@ -34,5 +34,5 @@ class GetThreeHoursStepWeatherDataNetworkRequest(
 )
 
 data class GetThreeHoursStepWeatherDataParams(
-    val location: String
+    val cityName: String
 )

@@ -16,7 +16,7 @@ class GetDailyWeatherDataNetworkRequest(
     connectionChecker = connectionChecker,
     lambdaCall = { params ->
         val response = weatherMapApi.getDailyWeatherData(
-            location = params.location,
+            cityName = params.cityName,
             cnt = params.cnt
         )
 
@@ -30,6 +30,6 @@ class GetDailyWeatherDataNetworkRequest(
 )
 
 data class GetDailyWeatherDataParams(
-    val location: String,
+    val cityName: String,
     val cnt: String
 )

@@ -9,10 +9,10 @@ class GetDailyWeatherDataUseCase(
 ) {
 
     suspend operator fun invoke(
-        location: String,
+        cityName: String,
         cnt: String
     ): CallResult<WeatherData> = weatherDataRepository.getDailyWeatherData(
-        location = location,
+        cityName = cityName,
         cnt = cnt
     )
 }

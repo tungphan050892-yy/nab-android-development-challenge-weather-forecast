@@ -15,13 +15,13 @@ class WeatherRemoteDataSourceImpl(
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : WeatherRemoteDataSource {
 
-    override suspend fun getDailyWeatherData(location: String, cnt: String): CallResult<WeatherData> = withContext(ioDispatcher) {
-        val params = GetDailyWeatherDataParams(location = location, cnt = cnt)
+    override suspend fun getDailyWeatherData(cityName: String, cnt: String): CallResult<WeatherData> = withContext(ioDispatcher) {
+        val params = GetDailyWeatherDataParams(cityName = cityName, cnt = cnt)
         getDailyWeatherDataNetworkRequest.execute(params)
     }
 
-    override suspend fun getThreeHoursStepWeatherData(location: String): CallResult<WeatherData> = withContext(ioDispatcher) {
-        val params = GetThreeHoursStepWeatherDataParams(location = location)
+    override suspend fun getThreeHoursStepWeatherData(cityName: String): CallResult<WeatherData> = withContext(ioDispatcher) {
+        val params = GetThreeHoursStepWeatherDataParams(cityName = cityName)
         getThreeHoursStepWeatherDataNetworkRequest.execute(params)
     }
 }

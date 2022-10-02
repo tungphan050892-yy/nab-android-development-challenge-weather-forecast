@@ -77,10 +77,12 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${versions.test.mockito}"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.test.mockito_kt}"
     testImplementation "io.mockk:mockk:${versions.test.mockk}"
+    testImplementation "com.squareup.okhttp3:mockwebserver:${versions.test.mock_web_server}"
+    testImplementation "org.amshove.kluent:kluent:${versions.test.kluent}"
+
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
     androidTestImplementation "androidx.test.ext:junit:${versions.androidx.test_core}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
-
 
 
 }

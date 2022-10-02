@@ -6,12 +6,12 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
 interface WeatherDataRepository {
 
     suspend fun getDailyWeatherData(
-        location: String,
+        cityName: String,
         cnt: String
     ): CallResult<WeatherData>
 
     suspend fun getThreeHoursStepWeatherData(
-        location: String
+        cityName: String
     ): CallResult<WeatherData>
 
 }

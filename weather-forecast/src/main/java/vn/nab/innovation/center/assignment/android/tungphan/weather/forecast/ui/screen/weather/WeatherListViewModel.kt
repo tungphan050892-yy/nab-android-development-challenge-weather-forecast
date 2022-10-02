@@ -30,11 +30,11 @@ class WeatherListViewModel(
     val screenEvent: LiveData<WeatherListScreenEvent> = _screenEvent
 
     fun fetchThreeHoursStepWeatherData(
-        location: String
+        cityName: String
     ) {
         _weatherDataState.value = WeatherListState.Loading()
         viewModelScope.launch {
-            val result = getThreeHoursStepWeather(location = location)
+            val result = getThreeHoursStepWeather(cityName = cityName)
             when {
                 result.isSuccess -> {
                     result.getOrNull()?.let { weatherData ->

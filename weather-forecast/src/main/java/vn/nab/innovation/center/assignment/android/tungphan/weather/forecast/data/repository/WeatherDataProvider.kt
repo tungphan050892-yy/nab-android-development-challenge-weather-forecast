@@ -16,11 +16,11 @@ class WeatherDataProvider(
     private val allWeatherData = MutableStateFlow(DEFAULT_WEATHER_DATA)
 
     override suspend fun getDailyWeatherData(
-        location: String,
+        cityName: String,
         cnt: String
     ): CallResult<WeatherData> {
         val result = weatherRemoteDataSource.getDailyWeatherData(
-            location = location,
+            cityName = cityName,
             cnt = cnt
         )
         if (result.isSuccess) {
@@ -32,9 +32,9 @@ class WeatherDataProvider(
     }
 
     override suspend fun getThreeHoursStepWeatherData(
-        location: String
+        cityName: String
     ): CallResult<WeatherData> {
-        val result = weatherRemoteDataSource.getThreeHoursStepWeatherData(location)
+        val result = weatherRemoteDataSource.getThreeHoursStepWeatherData(cityName)
         if (result.isSuccess) {
             result.getOrNull()?.let {
                 this@WeatherDataProvider.allWeatherData.value = it

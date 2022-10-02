@@ -5,8 +5,8 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
 
 interface WeatherRemoteDataSource {
 
-    suspend fun getDailyWeatherData(location: String, cnt: String): CallResult<WeatherData>
+    suspend fun getDailyWeatherData(cityName: String, cnt: String): CallResult<WeatherData>
 
-    suspend fun getThreeHoursStepWeatherData(location: String): CallResult<WeatherData>
+    suspend fun getThreeHoursStepWeatherData(cityName: String): CallResult<WeatherData>
 
 }

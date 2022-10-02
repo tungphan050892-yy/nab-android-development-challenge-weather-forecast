@@ -18,6 +18,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dom
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.model.WeatherItemUiModelMapper
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel.WeatherListState.Loading
 
+//TODO: maybe should also write test for ui mapper class in ui layer?
 class WeatherListViewModelTest {
 
     @get: Rule

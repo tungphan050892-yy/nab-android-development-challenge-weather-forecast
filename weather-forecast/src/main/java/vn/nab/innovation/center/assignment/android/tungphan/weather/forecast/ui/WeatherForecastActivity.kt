@@ -33,7 +33,7 @@ class WeatherForecastActivity : AppCompatActivity() {
                     celsiusDegree = celsiusDegreeTxt,
                     fetchThreeHoursStepWeatherData = { cityName ->
                         viewModel.fetchThreeHoursStepWeatherData(
-                            location = cityName
+                            cityName = cityName
                         )
                     },
                 )

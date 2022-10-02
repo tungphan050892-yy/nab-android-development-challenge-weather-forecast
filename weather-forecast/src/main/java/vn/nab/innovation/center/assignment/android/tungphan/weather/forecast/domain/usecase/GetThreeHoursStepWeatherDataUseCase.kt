@@ -12,8 +12,8 @@ class GetThreeHoursStepWeatherDataUseCase(
 ) {
 
     suspend operator fun invoke(
-        location: String,
+        cityName: String,
     ): CallResult<WeatherData> = weatherDataRepository.getThreeHoursStepWeatherData(
-        location = location
+        cityName = cityName
     )
 }

@@ -14,7 +14,7 @@ interface WeatherMapAPI {
     //this API is not usable for free user
     @GET("forecast/daily")
     suspend fun getDailyWeatherData(
-        @Query("q") location: String,
+        @Query("q") cityName: String,
         @Query("cnt") cnt: String
     ): Response<WeatherDataDTO>
     //endregion
@@ -22,7 +22,7 @@ interface WeatherMapAPI {
     // region get three hours step weather data
     @GET("forecast")
     suspend fun getThreeHoursStepWeatherData(
-        @Query("q") location: String
+        @Query("q") cityName: String
     ): Response<WeatherDataDTO>
     //endregion
 
