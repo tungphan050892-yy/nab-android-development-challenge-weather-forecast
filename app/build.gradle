@@ -38,6 +38,7 @@ android {
 
 dependencies {
 
+    implementation project(":weather-forecast")
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -53,4 +54,9 @@ dependencies {
     //DI
     implementation "io.insert-koin:koin-android:${versions.koin}"
     implementation "io.insert-koin:koin-androidx-compose:${versions.koin}"
+
+    //splash screen
+
+    // Splash screen
+    implementation "androidx.core:core-splashscreen:${versions.androidx.splash_screen}"
 }

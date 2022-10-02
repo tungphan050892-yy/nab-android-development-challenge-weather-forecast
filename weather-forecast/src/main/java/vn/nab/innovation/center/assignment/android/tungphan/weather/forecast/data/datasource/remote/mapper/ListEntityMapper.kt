@@ -1,7 +1,8 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.mapper
 
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.ListDTO
-import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.*
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.FeelsLike.Companion.DEFAULT_FEELSLIKE
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.ListEntity
 
 fun ListDTO.toEntityObject() = ListEntity(
     dt = this.dt,
