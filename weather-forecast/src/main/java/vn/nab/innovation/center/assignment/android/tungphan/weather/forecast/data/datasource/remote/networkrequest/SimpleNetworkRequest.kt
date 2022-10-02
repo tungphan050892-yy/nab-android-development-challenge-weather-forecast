@@ -3,9 +3,7 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 import vn.nab.innovation.center.assignment.android.tungphan.core.logging.createLogger
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.ConnectionChecker
-import java.net.HttpURLConnection
 import java.net.SocketTimeoutException
-import javax.net.ssl.SSLException
 
 /**
  * Concrete implementation of [NetworkRequest].

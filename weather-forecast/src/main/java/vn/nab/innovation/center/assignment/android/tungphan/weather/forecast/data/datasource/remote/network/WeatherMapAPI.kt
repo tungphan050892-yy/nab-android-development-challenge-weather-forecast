@@ -2,7 +2,6 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.da
 
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.dto.WeatherDataDTO
 

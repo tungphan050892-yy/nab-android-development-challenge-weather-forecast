@@ -21,7 +21,7 @@ fun WeatherListContent(
     scaffoldState: ScaffoldState,
     somethingWentWrongText: String,
     retryText: String,
-    fetchThreeHoursStepWeatherData: (cityName:String) -> Unit
+    fetchThreeHoursStepWeatherData: (cityName: String) -> Unit
 ) {
     Surface {
         when (weatherListState) {

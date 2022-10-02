@@ -5,6 +5,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -12,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.getViewModel
 import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.theme.AppTheme
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.R
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.common.ErrorSnackBar
@@ -21,10 +23,9 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun WeatherListScreen(
+    viewModel: WeatherListViewModel = getViewModel(),
     screenTitle: String,
     celsiusDegree: String,
-    weatherListState: WeatherListState,
-    weatherListScreenEvent: WeatherListScreenEvent?,
     fetchThreeHoursStepWeatherData: (cityName: String) -> Unit
 ) {
     // Common resources.
@@ -37,6 +38,10 @@ fun WeatherListScreen(
     val coroutineScope = rememberCoroutineScope()
     val keyboardController = LocalSoftwareKeyboardController.current
     var cityNameText by remember { mutableStateOf("") }
+    val weatherListState: WeatherListState by viewModel.weatherDataState.observeAsState(
+        WeatherListState.Loading()
+    )
+    val weatherListScreenEvent: WeatherListScreenEvent? by viewModel.screenEvent.observeAsState()
 
     Scaffold(
         topBar = {
@@ -72,6 +77,7 @@ fun WeatherListScreen(
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = {
+                        fetchThreeHoursStepWeatherData(cityNameText)
                         keyboardController?.hide()
                     }
                 ),
@@ -113,23 +119,23 @@ fun WeatherListScreen(
         }
     }
 
-    // Handle events.
+    //Handle events.
     weatherListScreenEvent?.let { event ->
         when (event) {
             is WeatherListScreenEvent.ShowError -> {
                 coroutineScope.launch {
                     val snackBarResult = snackBarHostState.showSnackbar(
-                        message = if (event.errorStringToDisplay.isBlank()) {
+                        message = event.errorStringToDisplay.ifBlank {
                             somethingWentWrongText
-                        } else {
-                            event.errorStringToDisplay
                         },
                         actionLabel = retryText,
-                        duration = SnackbarDuration.Indefinite
+                        duration = SnackbarDuration.Short
                     )
                     when (snackBarResult) {
                         SnackbarResult.Dismissed -> Unit // Do nothing.
-                        SnackbarResult.ActionPerformed -> Unit // Do nothing
+                        SnackbarResult.ActionPerformed -> {
+                            fetchThreeHoursStepWeatherData(cityNameText)
+                        }
                     }
                 }
             }

@@ -2,7 +2,6 @@ package vn.nab.innovation.center.assignment.android.tungphan.splashscreen
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import vn.nab.innovation.center.assignment.android.tungphan.R
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.WeatherForecastActivity

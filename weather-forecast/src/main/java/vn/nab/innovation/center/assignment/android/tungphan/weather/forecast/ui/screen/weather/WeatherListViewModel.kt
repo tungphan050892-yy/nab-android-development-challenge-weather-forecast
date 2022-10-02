@@ -70,7 +70,14 @@ class WeatherListViewModel(
         data class ShowError(
             val errorStringToDisplay: String
         ) : WeatherListScreenEvent() {
-            override fun equals(other: Any?): Boolean = this === other
+            override fun equals(other: Any?): Boolean {
+                return if (other !is ShowError) {
+                    false
+                } else {
+                    this.errorStringToDisplay === other.errorStringToDisplay
+                }
+            }
+
             override fun hashCode(): Int = System.identityHashCode(this)
         }
     }
