@@ -1,10 +1,16 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import kotlinx.coroutines.launch
 import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.theme.AppTheme
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.R
@@ -12,14 +18,14 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel.WeatherListState
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel.WeatherListScreenEvent
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun WeatherListScreen(
     screenTitle: String,
     celsiusDegree: String,
     weatherListState: WeatherListState,
     weatherListScreenEvent: WeatherListScreenEvent?,
-    fetchThreeHoursStepWeatherData: () -> Unit,
-//    onItemSelected: (weatherItemUIModal: weatherItemUIModal) -> Unit
+    fetchThreeHoursStepWeatherData: (cityName: String) -> Unit
 ) {
     // Common resources.
     val somethingWentWrongText = stringResource(R.string.something_went_wrong)
@@ -29,15 +35,18 @@ fun WeatherListScreen(
     val snackBarHostState = remember { SnackbarHostState() }
     val scaffoldState = rememberScaffoldState(snackbarHostState = snackBarHostState)
     val coroutineScope = rememberCoroutineScope()
+    val keyboardController = LocalSoftwareKeyboardController.current
     var cityNameText by remember { mutableStateOf("") }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(
-                    text= screenTitle,
-                    color = AppTheme.colors.white
-                ) },
+                title = {
+                    Text(
+                        text = screenTitle,
+                        color = AppTheme.colors.white
+                    )
+                },
                 backgroundColor = AppTheme.colors.greyscale50
             )
         },
@@ -56,14 +65,26 @@ fun WeatherListScreen(
                 onValueChange = {
                     cityNameText = it
                 },
-                label = { Text("Giving City Name Here, ex:\"Saigon\"") },
+                label = { Text("Giving City Name Here, eg:\"Saigon\"") },
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Text,
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        keyboardController?.hide()
+                    }
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
             )
 
             Button(
-                onClick = { fetchThreeHoursStepWeatherData },
+                onClick = {
+                    fetchThreeHoursStepWeatherData(cityNameText)
+                    keyboardController?.hide()
+                },
                 contentPadding = PaddingValues(
                     start = AppTheme.dimensions.THIRD_QUARTER_GRID_UNIT,
                     top = AppTheme.dimensions.HALF_GRID_UNIT,
@@ -74,19 +95,19 @@ fun WeatherListScreen(
                 colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.colors.greyscale50)
             ) {
                 Text(
-                    text="Get Weather Forecast",
+                    text = "Get Weather Forecast",
                     color = AppTheme.colors.white
                 )
             }
 
             WeatherListContent(
+                cityNameText = cityNameText,
                 celsiusDegree = celsiusDegree,
                 weatherListState = weatherListState,
                 coroutineScope = coroutineScope,
                 scaffoldState = scaffoldState,
                 somethingWentWrongText = somethingWentWrongText,
                 retryText = retryText,
-//            onItemSelected = onItemSelected,
                 fetchThreeHoursStepWeatherData = fetchThreeHoursStepWeatherData
             )
         }
@@ -98,7 +119,11 @@ fun WeatherListScreen(
             is WeatherListScreenEvent.ShowError -> {
                 coroutineScope.launch {
                     val snackBarResult = snackBarHostState.showSnackbar(
-                        message = somethingWentWrongText,
+                        message = if (event.errorStringToDisplay.isBlank()) {
+                            somethingWentWrongText
+                        } else {
+                            event.errorStringToDisplay
+                        },
                         actionLabel = retryText,
                         duration = SnackbarDuration.Indefinite
                     )

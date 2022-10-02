@@ -14,23 +14,22 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.
 
 @Composable
 fun WeatherListContent(
+    cityNameText: String,
     celsiusDegree: String,
     weatherListState: ViewModelState,
     coroutineScope: CoroutineScope,
     scaffoldState: ScaffoldState,
     somethingWentWrongText: String,
     retryText: String,
-//    onItemSelected: (weatherItemUIModal: weatherItemUIModal) -> Unit,
-    fetchThreeHoursStepWeatherData: () -> Unit
+    fetchThreeHoursStepWeatherData: (cityName:String) -> Unit
 ) {
     Surface {
         when (weatherListState) {
             is WeatherListViewModel.WeatherListState.Loading -> LoadingScreen()
             is WeatherListViewModel.WeatherListState.Loaded -> {
                 WeatherForecastList(
-                    celsiusDegree,
-                    weatherListState.weatherItemUiModal ?: emptyList(),
-//                    onItemSelected
+                    celsiusDegree = celsiusDegree,
+                    weatherUIItems = weatherListState.weatherItemUiModal ?: emptyList()
                 )
             }
             is WeatherListViewModel.WeatherListState.Empty -> {
@@ -47,7 +46,7 @@ fun WeatherListContent(
                         )
                         when (snackBarResult) {
                             SnackbarResult.Dismissed -> Unit // Do nothing.
-                            SnackbarResult.ActionPerformed -> fetchThreeHoursStepWeatherData()
+                            SnackbarResult.ActionPerformed -> fetchThreeHoursStepWeatherData(cityNameText)
                         }
                     }
                 }

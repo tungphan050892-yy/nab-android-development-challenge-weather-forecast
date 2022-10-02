@@ -40,9 +40,9 @@ class WeatherForecastActivity : AppCompatActivity() {
                     celsiusDegree = celsiusDegreeTxt,
                     weatherListState = weatherListState,
                     weatherListScreenEvent = weatherListScreenEvent,
-                    fetchThreeHoursStepWeatherData = {
+                    fetchThreeHoursStepWeatherData = { cityName ->
                         viewModel.fetchThreeHoursStepWeatherData(
-                            location = DEFAULT_CITY_NAME
+                            location = cityName
                         )
                     },
 //                    onItemSelected = { weatherItemUIModal ->

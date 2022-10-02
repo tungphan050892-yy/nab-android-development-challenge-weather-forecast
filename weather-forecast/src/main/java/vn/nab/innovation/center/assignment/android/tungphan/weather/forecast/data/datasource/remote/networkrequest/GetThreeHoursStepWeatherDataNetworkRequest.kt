@@ -5,6 +5,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.dat
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.ConnectionChecker
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.network.WeatherMapAPI
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.domain.entity.WeatherData
+import javax.net.ssl.HttpsURLConnection
 
 class GetThreeHoursStepWeatherDataNetworkRequest(
     private val connectionChecker: ConnectionChecker,
@@ -19,8 +20,15 @@ class GetThreeHoursStepWeatherDataNetworkRequest(
         return@simpleNetworkRequest if (response.isSuccessful && response.body() != null) {
             CallResult.success(response.body()!!.toEntityObject())
         } else {
-            val errors = response.message()
-            CallResult.failure(Throwable(errors))
+            when (response.code()) {
+                HttpsURLConnection.HTTP_NOT_FOUND -> {
+                    CallResult.failure(Throwable("City Name Not Found"))
+                }
+                else -> {
+                    val errors = response.message()
+                    CallResult.failure(Throwable(errors))
+                }
+            }
         }
     }
 )

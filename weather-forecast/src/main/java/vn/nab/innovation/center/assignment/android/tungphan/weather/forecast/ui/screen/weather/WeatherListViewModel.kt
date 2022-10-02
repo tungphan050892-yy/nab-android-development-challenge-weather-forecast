@@ -52,25 +52,24 @@ class WeatherListViewModel(
                     }
                 }
                 else -> {
-                    val exception = result.exceptionOrNull() // TODO display error message
+                    _weatherDataState.value = WeatherListState.Empty()
+                    val exception = result.exceptionOrNull()
                     logger.error(exception.toString())
-                    _screenEvent.value = WeatherListScreenEvent.ShowError()
+                    _screenEvent.value = WeatherListScreenEvent.ShowError(exception?.message ?: "")
                 }
             }
         }
     }
 
-    fun openWeatherDetail(weatherDateTime: String) {
-        //TODO: handle screen open
-    }
-
     /**
      * Events upon which UI should take some action. The reason for not combining events and data
      * payload within the same live data is because some events depend upon the data - e.g.
-     * list of saved-searches should still be shown if an [Error] occurs.
+     * list of weather item should still be shown if an [Error] occurs.
      */
     sealed class WeatherListScreenEvent {
-        class ShowError : WeatherListScreenEvent() {
+        data class ShowError(
+            val errorStringToDisplay: String
+        ) : WeatherListScreenEvent() {
             override fun equals(other: Any?): Boolean = this === other
             override fun hashCode(): Int = System.identityHashCode(this)
         }
