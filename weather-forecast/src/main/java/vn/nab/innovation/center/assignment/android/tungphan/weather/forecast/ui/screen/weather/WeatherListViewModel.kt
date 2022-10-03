@@ -19,6 +19,7 @@ class WeatherListViewModel(
 
     companion object {
         const val DEFAULT_CITY_NAME = "saigon"
+        const val CITY_NAME_REGEX = "^([0-9a-zA-ZÀ-ý]+(?:. |-| |'))*[0-9a-zA-ZÀ-ý]*\$"
     }
 
     private val logger = createLogger()

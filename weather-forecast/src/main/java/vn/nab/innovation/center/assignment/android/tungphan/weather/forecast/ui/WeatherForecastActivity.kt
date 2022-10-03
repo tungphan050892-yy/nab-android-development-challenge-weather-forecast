@@ -9,6 +9,7 @@ import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.th
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.R
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListScreen
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel.Companion.CITY_NAME_REGEX
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.weather.WeatherListViewModel.Companion.DEFAULT_CITY_NAME
 
 class WeatherForecastActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class WeatherForecastActivity : AppCompatActivity() {
                 WeatherListScreen(
                     screenTitle = screenTitleTxt,
                     celsiusDegree = celsiusDegreeTxt,
+                    validInputRegex = Regex(CITY_NAME_REGEX),
                     fetchThreeHoursStepWeatherData = { cityName ->
                         viewModel.fetchThreeHoursStepWeatherData(
                             cityName = cityName

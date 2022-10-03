@@ -26,6 +26,7 @@ fun WeatherListScreen(
     viewModel: WeatherListViewModel = getViewModel(),
     screenTitle: String,
     celsiusDegree: String,
+    validInputRegex: Regex,
     fetchThreeHoursStepWeatherData: (cityName: String) -> Unit
 ) {
     // Common resources.
@@ -68,7 +69,11 @@ fun WeatherListScreen(
                 value = cityNameText,
                 placeholder = { Text("City Name") },
                 onValueChange = {
-                    cityNameText = it
+                    //to prevent script added into textfield input
+                    //i decided to follow this simple approach, which is create a regex for city name specifically and reject "danger" char
+                    if (it.contains(validInputRegex)){
+                        cityNameText = it
+                    }
                 },
                 label = { Text("Giving City Name Here, eg:\"Saigon\"") },
                 keyboardOptions = KeyboardOptions(
