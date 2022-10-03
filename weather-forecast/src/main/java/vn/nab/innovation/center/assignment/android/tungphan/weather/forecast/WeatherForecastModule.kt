@@ -2,13 +2,17 @@ package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast
 
 import android.content.Context
 import android.net.ConnectivityManager
+import com.google.gson.Gson
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.Preferences
+import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.PreferencesProvider
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.WeatherLocalDataSource
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.local.WeatherLocalDataStoreImpl
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.datasource.remote.WeatherRemoteDataSource
@@ -55,7 +59,8 @@ val weatherForecastModule = module {
     single<WeatherDataRepository> {
         WeatherDataProvider(
             weatherLocalDataSource = get(),
-            weatherRemoteDataSource = get()
+            weatherRemoteDataSource = get(),
+            gson = get()
         )
     }
     //endregion
@@ -90,7 +95,9 @@ val weatherForecastModule = module {
 
     //region local data source
     single<WeatherLocalDataSource> {
-        WeatherLocalDataStoreImpl()
+        WeatherLocalDataStoreImpl(
+            preferences = get()
+        )
     }
     //endregion
 
@@ -103,6 +110,17 @@ val weatherForecastModule = module {
 
     single { provideRetrofit(get()) }
     //end region
+
+    //region local storage
+    single<Preferences> {
+        PreferencesProvider(androidApplication())
+    }
+    //endregion
+
+    //region other
+    single {
+        Gson()
+    }
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
