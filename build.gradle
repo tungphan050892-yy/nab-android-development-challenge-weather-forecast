@@ -74,14 +74,15 @@ buildscript {
                     'mock_web_server': '4.9.3',
             ],
 
-            'koin'                  : '3.1.5',
-            'room'                  : '2.4.2',
-            'picasso'               : '2.71828',
-            'espresso'              : '3.4.0',
-            'coroutines'            : '1.6.1',
-            'gson'                  : '2.9.0',
-            'ktlint'                : '0.41.0',
-            'google_services'       : '4.3.10'
+            'koin'                      : '3.1.5',
+            'room'                      : '2.4.2',
+            'picasso'                   : '2.71828',
+            'espresso'                  : '3.4.0',
+            'coroutines'                : '1.6.1',
+            'gson'                      : '2.9.0',
+            'ktlint'                    : '0.41.0',
+            'google_services'               : '4.3.10',
+            'secrets_gradle_plugin'         : '2.0.1',
     ]
 
     repositories {
@@ -103,6 +104,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:${versions.gradle}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "com.google.gms:google-services:${versions.google_services}"
+        classpath("com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:${versions.secrets_gradle_plugin}")
     }
 
 
