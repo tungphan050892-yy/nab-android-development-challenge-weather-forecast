@@ -54,21 +54,29 @@ private fun LazyListScope.renderItem(
 private fun WeatherItemRow(
     celsiusDegree: String,
     weatherItemUiModal: WeatherItemUiModal
-//    onItemSelected: (weatherItemUIModal: weatherItemUIModal) -> Unit
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .background(color = AppTheme.colors.white),
-//            .clickable { onItemSelected(weatherItemUiModel) },
+            .background(color = AppTheme.colors.white)
     ) {
         Column {
-            WeatherItemText("Date: ${weatherItemUiModal.dateString}")
-            WeatherItemText("Average Temperature: ${weatherItemUiModal.averageTemperature}$celsiusDegree")
-            WeatherItemText("Pressure: ${weatherItemUiModal.pressure}")
-            WeatherItemText("Humidity: ${weatherItemUiModal.humidity}")
-            WeatherItemText("Description: ${weatherItemUiModal.description}")
+            WeatherItemText(
+                text = "Date: ${weatherItemUiModal.dateString}"
+            )
+            WeatherItemText(
+                text = "Average Temperature: ${weatherItemUiModal.averageTemperature}$celsiusDegree"
+            )
+            WeatherItemText(
+                text = "Pressure: ${weatherItemUiModal.pressure}"
+            )
+            WeatherItemText(
+                text = "Humidity: ${weatherItemUiModal.humidity}"
+            )
+            WeatherItemText(
+                text = "Description: ${weatherItemUiModal.description}"
+            )
         }
     }
 }
@@ -78,7 +86,7 @@ private fun WeatherItemText(text: String) {
     Text(
         text = text,
         modifier = Modifier
-            .wrapContentWidth()
+            .wrapContentSize()
             .padding(
                 start = AppTheme.dimensions.ONE_AND_HALF_GRID_UNIT,
                 end = AppTheme.dimensions.ONE_AND_HALF_GRID_UNIT
@@ -86,10 +94,9 @@ private fun WeatherItemText(text: String) {
             .defaultMinSize(
                 AppTheme.dimensions.THREE_GRID_UNIT,
                 AppTheme.dimensions.THREE_GRID_UNIT
-            )
-            .height(AppTheme.dimensions.THREE_GRID_UNIT),
-        textAlign = TextAlign.Center,
-        style = AppTheme.typography.body2.copy(
+            ),
+        textAlign = TextAlign.Left,
+        style = AppTheme.typography.body1.copy(
             color = AppTheme.colors.black
         )
     )

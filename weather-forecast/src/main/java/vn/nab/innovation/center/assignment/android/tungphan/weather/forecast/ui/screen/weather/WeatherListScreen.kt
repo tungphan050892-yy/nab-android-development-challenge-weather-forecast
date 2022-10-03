@@ -75,7 +75,10 @@ fun WeatherListScreen(
                         cityNameText = it
                     }
                 },
-                label = { Text("Giving City Name Here, eg:\"Saigon\"") },
+                label = { Text(
+                    text="Giving City Name Here, eg:\"Saigon\"",
+                    style = AppTheme.typography.h6
+                ) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Done
@@ -89,6 +92,10 @@ fun WeatherListScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
+                    .padding(
+                        top = AppTheme.dimensions.HALF_GRID_UNIT,
+                        bottom = AppTheme.dimensions.HALF_GRID_UNIT
+                    )
             )
 
             Button(
@@ -102,12 +109,14 @@ fun WeatherListScreen(
                     end = AppTheme.dimensions.THIRD_QUARTER_GRID_UNIT,
                     bottom = AppTheme.dimensions.HALF_GRID_UNIT
                 ),
-                modifier = Modifier.wrapContentSize(),
-                colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.colors.greyscale50)
+                modifier = Modifier.wrapContentSize()
+                    .padding(bottom = AppTheme.dimensions.ONE_GRID_UNIT),
+                colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.colors.greyscale50),
             ) {
                 Text(
                     text = "Get Weather Forecast",
-                    color = AppTheme.colors.white
+                    color = AppTheme.colors.white,
+                    style = AppTheme.typography.button
                 )
             }
 
