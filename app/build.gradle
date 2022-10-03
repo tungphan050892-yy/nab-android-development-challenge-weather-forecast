@@ -21,7 +21,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            //TODO: watch out, this should be start right from the beginning of the project, with long history project
+            //we might not be able to get a build because of these flag: minifyEnabled, shrinkResource
+            //Shrink - Obfuscate - Optimize matter
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
