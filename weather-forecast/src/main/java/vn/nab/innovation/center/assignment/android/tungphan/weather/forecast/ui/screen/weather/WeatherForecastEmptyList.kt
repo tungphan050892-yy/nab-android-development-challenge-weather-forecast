@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.theme.AppTheme
@@ -23,6 +24,7 @@ fun WeatherForecastEmptyScreen() {
             .fillMaxWidth()
             .fillMaxHeight()
             .padding(AppTheme.dimensions.TWO_GRID_UNIT)
+            .semantics(mergeDescendants = true) { /*temporary doing nothing*/ }
     ) {
         Column(
             modifier = Modifier
@@ -31,7 +33,7 @@ fun WeatherForecastEmptyScreen() {
         ) {
             Image(
                 painter = painterResource(R.drawable.ic_sad),
-                contentDescription = null,
+                contentDescription = "This image display to let u know that something went wrong",
                 colorFilter = ColorFilter.tint(AppTheme.colors.greyscale80),
                 modifier = Modifier
                     .size(AppTheme.dimensions.SIXTEEN_GRID_UNIT)

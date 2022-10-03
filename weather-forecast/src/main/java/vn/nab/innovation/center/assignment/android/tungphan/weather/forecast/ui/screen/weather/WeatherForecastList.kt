@@ -8,6 +8,7 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import vn.nab.innovation.center.assignment.android.tungphan.common.ui.compose.theme.AppTheme
 import vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.ui.screen.model.WeatherItemUiModal
@@ -20,6 +21,7 @@ fun WeatherForecastList(
     val itemsToDisplay: Map<Int, WeatherItemUiModal> = weatherUIItems.associateBy {
         it.datetime
     }
+    //TODO: this list hasn't got paging/lazy load mechanism yet, think about it Tung!
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -55,11 +57,15 @@ private fun WeatherItemRow(
     celsiusDegree: String,
     weatherItemUiModal: WeatherItemUiModal
 ) {
+    //TODO: using semantics might be a huge issue with long list, to avoid this,
+    //it's better to also implement a bookmark button on each item
+    //user can decide which item should be skip when Talkback walk through content of the list
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
             .background(color = AppTheme.colors.white)
+            .semantics(mergeDescendants = true) { /*temporary doing nothing*/ }
     ) {
         Column {
             WeatherItemText(
