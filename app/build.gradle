@@ -1,6 +1,7 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
+    id "com.google.gms.google-services"
 }
 
 android {
@@ -55,8 +56,10 @@ dependencies {
     implementation "io.insert-koin:koin-android:${versions.koin}"
     implementation "io.insert-koin:koin-androidx-compose:${versions.koin}"
 
-    //splash screen
-
     // Splash screen
     implementation "androidx.core:core-splashscreen:${versions.androidx.splash_screen}"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:${versions.firebase}")
+    implementation "com.google.firebase:firebase-analytics-ktx"
 }

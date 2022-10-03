@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536107868652",
+    "project_id": "nabweatherforecast",
+    "storage_bucket": "nabweatherforecast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536107868652:android:75f1948da3db45eb5820c9",
+        "android_client_info": {
+          "package_name": "vn.nab.innovation.center.assignment.android.tungphan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536107868652-augtrd4m7gtf784e4ej63keo52rfidsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf9eLs2F4O0spHt-V-52BxEtC3_fCnyFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536107868652-augtrd4m7gtf784e4ej63keo52rfidsg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
