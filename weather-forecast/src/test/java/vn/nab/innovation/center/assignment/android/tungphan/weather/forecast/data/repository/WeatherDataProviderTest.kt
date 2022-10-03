@@ -1,5 +1,6 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.repository
 
+import com.google.gson.Gson
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
@@ -71,7 +72,8 @@ internal class WeatherDataProviderTest {
     private fun `given tested data provider`() {
         tested = WeatherDataProvider(
             weatherLocalDataSource = weatherLocalDataSource,
-            weatherRemoteDataSource = weatherRemoteDataSource
+            weatherRemoteDataSource = weatherRemoteDataSource,
+            gson = Gson()
         )
     }
 

@@ -33,6 +33,14 @@ class WeatherListViewModel(
     fun fetchThreeHoursStepWeatherData(
         cityName: String
     ) {
+        cityName.isQueryLongEnough()?.let {
+            processFetchData(it)
+        } ?: run {
+            _screenEvent.value = WeatherListScreenEvent.ShowError("City name is not long enough")
+        }
+    }
+
+    private fun processFetchData(cityName: String) {
         _weatherDataState.value = WeatherListState.Loading()
         viewModelScope.launch {
             val result = getThreeHoursStepWeather(cityName = cityName)
@@ -60,6 +68,12 @@ class WeatherListViewModel(
                 }
             }
         }
+    }
+
+    private fun String.isQueryLongEnough(): String? = if (this.length >= 3) {
+        this
+    } else {
+        null
     }
 
     /**

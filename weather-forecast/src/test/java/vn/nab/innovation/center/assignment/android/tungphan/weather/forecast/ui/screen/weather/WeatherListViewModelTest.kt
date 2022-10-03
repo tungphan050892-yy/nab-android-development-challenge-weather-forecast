@@ -42,6 +42,20 @@ class WeatherListViewModelTest {
     }
 
     @Test
+    fun `when the city name is less than 3 char, then ShowError event should be emitted`() = runTest {
+        //Given
+        tested.screenEvent.observeForever(screenEventObserver)
+
+        //when
+        tested.fetchThreeHoursStepWeatherData("sa")
+
+        //then
+        verify(exactly = 1) {
+            screenEventObserver.onChanged(WeatherListViewModel.WeatherListScreenEvent.ShowError("City name is not long enough"))
+        }
+    }
+
+    @Test
     fun `when the screen is open, then Loading state should be emitted`() = runTest {
         //Given
         tested.weatherDataState.observeForever(screenStateObserver)

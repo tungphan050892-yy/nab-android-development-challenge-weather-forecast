@@ -1,6 +1,5 @@
 package vn.nab.innovation.center.assignment.android.tungphan.weather.forecast.data.repository
 
-import android.util.Log
 import com.google.gson.Gson
 import vn.nab.innovation.center.assignment.android.tungphan.core.logging.createLogger
 import vn.nab.innovation.center.assignment.android.tungphan.core.model.CallResult
@@ -58,7 +57,6 @@ class WeatherDataProvider(
             val result = weatherRemoteDataSource.getThreeHoursStepWeatherData(cityName)
             return if (result.isSuccess) {//success -> return result
                 result.getOrNull()?.let { weatherData ->
-                    Log.e("Tung", "request weather data successfully, store it locally")
                     logger.error("request weather data successfully, store it locally")
                     storeThreeHoursStepWeatherDataLocally(cityName, weatherData)
                     storeLastGetThreeHoursWeatherDataResponseTime(cityName, System.currentTimeMillis())
@@ -67,17 +65,14 @@ class WeatherDataProvider(
             } else {//if not success, consider to load data locally
                 if (result.exceptionOrNull() == NoInternet) {
                     logger.error("no internet, get data locally")
-                    Log.e("Tung", "no internet, get data locally")
                     val data = getThreeHoursStepWeatherDataLocally(cityName)
                     CallResult.success(data)
                 } else {
-                    Log.e("Tung", "request failed with exception")
                     logger.error("request failed with exception")
                     result
                 }
             }
         } else {
-            Log.e("Tung", "still in 3 hours, get cache data")
             logger.error("still in 3 hours, get cache data")
             val data = getThreeHoursStepWeatherDataLocally(cityName)
             return CallResult.success(data)
