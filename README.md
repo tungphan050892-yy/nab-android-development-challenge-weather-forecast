@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast">
-    <img src="imgForReadmeDocs/myProfileImage.jpg" alt="Logo" width="120" height="120">
+    <img src="imgForReadmeDocs/myProfileImage.png" alt="Logo" width="120" height="120">
   </a>
 
 <h3 align="center">NAB WEATHER FORECAST - TUNG PHAN</h3>
