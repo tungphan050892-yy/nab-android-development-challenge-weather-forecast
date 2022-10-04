@@ -95,18 +95,18 @@ The project develop in a time box to fill in every requirement in the assignment
 
 ### Built With
 
-*[![Kotlin][Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46]][Kotlin-url]
-*[![KotlinGradle][Kotlin Gradle,Compiler version: 1.6.10]][Kotlin-url]
-*[![AndroidX][AndroidX]][AndroidX-url]
-*[![JetpackCompose][Other Stuff In Jetpack Compose]][Jetpack-Compose-url]
-*[![Koin][Koin]][Koin-url]
-*[![Firebase][Firebase]][Firebase-url]
-*[![AndroidTest][AndroidTest]][Android-Test-url]
-*[![AndroidTestBestPractice][Android Test Best Practice]][Android-Test-Best-Practice-url]
-*[![Spotless][Spotless]][Spotless-url]
-*[![AndroidStudio][Android Studio]][Android-Studio-url]
-*[![Postman][Postman]][Postman-url]
-*[My Cat]🐈🐈🐈🐈🐈🐈🐈
+*[![Kotlin][Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46]][Kotlin-url]<br>
+*[![KotlinGradle][Kotlin Gradle,Compiler version: 1.6.10]][Kotlin-url]<br>
+*[![AndroidX][AndroidX]][AndroidX-url]<br>
+*[![JetpackCompose][Other Stuff In Jetpack Compose]][Jetpack-Compose-url]<br>
+*[![Koin][Koin]][Koin-url]<br>
+*[![Firebase][Firebase]][Firebase-url]<br>
+*[![AndroidTest][AndroidTest]][Android-Test-url]<br>
+*[![AndroidTestBestPractice][Android Test Best Practice]][Android-Test-Best-Practice-url]<br>
+*[![Spotless][Spotless]][Spotless-url]<br>
+*[![AndroidStudio][Android Studio]][Android-Studio-url]<br>
+*[![Postman][Postman]][Postman-url]<br>
+*[My Cat]🐈🐈🐈🐈🐈🐈🐈<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -209,32 +209,28 @@ Project Link: [https://github.com/tungphan050892/nab-android-development-challen
 [contributors-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/graphs/contributors
 [forks-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/network/members
 [stars-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/blob/development/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/phantung5892/
-[Kotlin]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Kotlin-url]: https://nextjs.org/
-[KotlinGradle]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[KotlinGradle-url]: https://nextjs.org/
-[AndroidX]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[AndroidX-url]: https://nextjs.org/
-[JetpackCompose]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Jetpack-Compose-url]: https://nextjs.org/
-[Koin]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Koin-url]: https://nextjs.org/
-[Firebase]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Firebase-url]: https://nextjs.org/
-[AndroidTest]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Android-Test-url]: https://nextjs.org/
-[AndroidTestBestPractice]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Android-Test-Best-Practice-url]: https://nextjs.org/
-[Spotless]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Spotless-url]: https://nextjs.org/
-[AndroidStudio]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Android-Studio-url]: https://nextjs.org/
-[Postman]: https://img.shields.io/static/v1?message=css3&logo=css3&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic
-[Postman-url]: https://nextjs.org/
+[Kotlin]: https://user-images.githubusercontent.com/107334103/193745662-a6ed5049-2334-47ec-9c5b-3f806675ed78.png
+[Kotlin-url]: https://developer.android.com/kotlin
+[KotlinGradle]: https://user-images.githubusercontent.com/107334103/193745930-bf5729da-cdac-477e-b6e3-779d579fc1b6.png
+[KotlinGradle-url]: https://developer.android.com/kotlin
+[AndroidX]: https://user-images.githubusercontent.com/107334103/193746200-61cb45c6-77eb-469a-a0f1-7b134bb7cc26.png
+[AndroidX-url]: https://developer.android.com/jetpack/androidx
+[JetpackCompose]: https://user-images.githubusercontent.com/107334103/193746281-75753289-ef9b-4819-b183-fe62d2a67479.png
+[Jetpack-Compose-url]: https://developer.android.com/jetpack/compose
+[Koin]: https://user-images.githubusercontent.com/107334103/193746210-674d4ced-ee1d-4a16-975d-240fa2637efc.png
+[Koin-url]: https://insert-koin.io/
+[Firebase]: https://user-images.githubusercontent.com/107334103/193746392-157cd7a9-18d8-4569-b18f-4d51cfd73275.png
+[Firebase-url]: https://firebase.google.com/
+[AndroidTest]: https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png
+[Android-Test-url]: https://developer.android.com/studio/test
+[AndroidTestBestPractice]: https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png
+[Android-Test-Best-Practice-url]: https://developer.android.com/training/testing
+[Spotless-url]: https://github.com/diffplug/spotless
+[AndroidStudio]: https://user-images.githubusercontent.com/107334103/193746594-0477ed79-a136-40e9-a7c8-fb542be43ec7.png
+[Android-Studio-url]: https://developer.android.com/studio
+[Postman]: https://user-images.githubusercontent.com/107334103/193746673-5c2179f1-a6ca-4760-9f18-eece2fb274e2.png
+[Postman-url]: https://www.postman.com/
 
