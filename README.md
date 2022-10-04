@@ -55,11 +55,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-😎 Simple Demo Video
+😎 Simple Demo Video<br><br>
+<p align="center">
 [![Demo 1 Thumbnail](https://img.youtube.com/vi/1C8sPqRtsWc/0.jpg)](https://www.youtube.com/watch?v=1C8sPqRtsWc)
+</p>
 
-😎 Some feature to support text scale base on device setting and Talkback
+😎 Some feature to support text scale base on device setting and Talkback <br><br>
+<p align="center">
 [![Demo 2 Thumbnail](https://img.youtube.com/vi/D-pL5n9sCGs/0.jpg)](https://www.youtube.com/watch?v=D-pL5n9sCGs)
+</p>
 
 This repository is my assignment for NAB Innovation Center Vietnam interview, I really like this assignment
 
