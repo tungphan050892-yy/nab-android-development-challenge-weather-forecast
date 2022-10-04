@@ -1,4 +1,5 @@
 <!-- PROJECT LOGO -->
+# readme-top
 <br />
 <div align="center">
   <a href="https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast">
@@ -55,20 +56,10 @@
 ## About The Project
 
 😎 Simple Demo Video
-<div align="center">
-    <video width="320" height="240" controls>
-      <source src="demoVideo/demo-1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-</div>
+[![Demo 1 Thumbnail](https://img.youtube.com/vi/1C8sPqRtsWc/0.jpg)](https://www.youtube.com/watch?v=1C8sPqRtsWc)
 
 😎 Some feature to support text scale base on device setting and Talkback
-<div align="center">
-    <video width="320" height="240" controls>
-      <source src="demoVideo/demo-2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-</div>
+[![Demo 2 Thumbnail](https://img.youtube.com/vi/D-pL5n9sCGs/0.jpg)](https://www.youtube.com/watch?v=D-pL5n9sCGs)
 
 This repository is my assignment for NAB Innovation Center Vietnam interview, I really like this assignment
 
@@ -80,8 +71,8 @@ Here's why:
 * I also be able to learn & apply something new (heard about it but not yet have a chance for actual action on it) like accessibility in Android, security for the app in different level, etc
 
 The project develop in a time box to fill in every requirement in the assignment, which mean the best that I can do to fit the time box, but if there's more time, I would love to:
-* <b>Bug fixing:<b> there's a weird bug with Event observe, I should clean it up myself
-* <b>Detect root device user<b>, I found [this](https://medium.com/mindorks/restricting-access-of-android-apps-on-root-devices-ed68055c7883) suggestion for the topic, but I didn't implement for two reasons: 
+* <b>Bug fixing:</b> there's a weird bug with Event observe, I should clean it up myself
+* <b>Detect root device user</b>, I found [this](https://medium.com/mindorks/restricting-access-of-android-apps-on-root-devices-ed68055c7883) suggestion for the topic, but I didn't implement for two reasons: 
 - I don't have root device to test the code in reality (actually can try to start emulator as root). But its always good to test the code in "production"
 - Time box matter force me to prioritize this topic at the end of the task list)
 * Implement ui testing framework & write basic end to end test
@@ -95,7 +86,7 @@ The project develop in a time box to fill in every requirement in the assignment
 
 ### Built With
 
-### Built With >> Click Image For Reference <<
+### Built With (Click the image For Reference)
 
 * <b>Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46</b><br>
   <a href="https://developer.android.com/kotlin">
