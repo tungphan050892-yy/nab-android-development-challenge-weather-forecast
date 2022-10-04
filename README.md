@@ -34,6 +34,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#main-architecture">Main Architecture</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -41,9 +42,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -75,8 +73,8 @@ Here's why:
 The project develop in a time box to fill in every requirement in the assignment, which mean the best that I can do to fit the time box, but if there's more time, I would love to:
 * <b>Bug fixing:</b> there's a weird bug with Event observe, I should clean it up myself
 * <b>Detect root device user</b>, I found [this](https://medium.com/mindorks/restricting-access-of-android-apps-on-root-devices-ed68055c7883) suggestion for the topic, but I didn't implement for two reasons:
-- I don't have root device to test the code in reality (actually can try to start emulator as root). But its always good to test the code in "production"
-- Time box matter force me to prioritize this topic at the end of the task list)
++ I don't have root device to test the code in reality (actually can try to start emulator as root). But its always good to test the code in "production"
++ Time box matter force me to prioritize this topic at the end of the task list)
 * Implement ui testing framework & write basic end to end test
 * Adding simple build pipeline with Github Action & Deploy using Firebase App Distribution: build the app when something change on development branch, run unit test, deploy the apk file to Firebase App Distribution, send email notification to user in the list (or Slack msg if there is one)
 * Support landscape mode, dim mode, dark theme
@@ -85,7 +83,8 @@ The project develop in a time box to fill in every requirement in the assignment
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Built With (Click the image For Reference)
+### Built With 
+<b>(CLICK THE IMAGE FOR REFERENCE)</b>
 
 * <b>Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46</b><br>
   <a href="https://developer.android.com/kotlin">
@@ -155,7 +154,6 @@ The project develop in a time box to fill in every requirement in the assignment
 
 <!-- GETTING STARTED -->
 ## Getting Started
-<b>>>Update On-going<<</b><br><br>
 This is one way of how to clone this repository and run the app in debug mode
 
 ### Prerequisites
@@ -185,22 +183,6 @@ This is one way of how to clone this repository and run the app in debug mode
     else 🎉
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-<b>>>Update Later<<</b><br><br>
-
-<!-- ROADMAP -->
-## Roadmap
-<b>>>Update Later<<</b><br><br>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-## Contributing
-<b>>>Update Later<<</b><br><br>
 
 <!-- LICENSE -->
 ## License
