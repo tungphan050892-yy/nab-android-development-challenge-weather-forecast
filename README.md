@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast">
     <img src="logoForReadmeDocs/myProfileImage.jpg" alt="Logo" width="120" height="120">
   </a>
 
@@ -55,23 +55,34 @@
 ## About The Project
 
 😎 Simple Demo Video
-
-
+<div align="center">
+    <video width="320" height="240" controls>
+      <source src="demoVideo/demo-1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>
 
 😎 Some feature to support text scale base on device setting and Talkback
+<div align="center">
+    <video width="320" height="240" controls>
+      <source src="demoVideo/demo-2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>>
 
-
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This repository is my assignment for NAB Innovation Center Vietnam interview, I really like this assignment
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+* I do this assignment not just for the interview, but also trying to having fun with my work.
+* The assignment written clear and in detail, except that API docs is not 100% correct, require me to clarify with HR person in my case
+* Giving me a chance to start an Android project from 0, re-approach every single topic related to mobile development in general
+* This repository will be a great template to start any Android project from the beginning, with latest gradle version, lib, 3rd party, shrinkResource, minifyEnable,etc
+* I also be able to learn & apply something new (heard about it but not yet have a chance for actual action on it) like accessibility in Android, security for the app in different level, etc
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+The project develop in a time box to fill in every requirement in the assignment, which mean the best that I can do to fit the time box, but if there's more time, I would love to:
+* Implement ui testing framework & write basic end to end test
+* Adding simple build pipeline with Github Action & Deploy using Firebase App Distribution: build the app when something change on development branch, run unit test, deploy the apk file to Firebase App Distribution, send email notification to user in the list (or Slack msg if there is one)
+* Support landscape mode, dim mode, dark theme
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,90 +107,60 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+<<Update On-going>>
+This is one way of how to clone this repository and run the app in debug mode
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Install Android Studio (Chipmunk 2021.2.1)
+* Download android SDK Platform API level 22 to 33 (Its heavy, I know, I'm sorry but it's not my fault 😭 I blame my cat for this 🐈)
+* Gradle plugin version 7.1.3
+* Gradle version 7.2
+* The project has jvmTarget '1.8' so make sure you have it.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+1. Get a free API Key at [https://openweathermap.org/](https://openweathermap.org/)
+2. Clone the repo (I hope you already got added into the repo & setup ur ssh 😁)
+   ```sh
+   git clone git@github.com:tungphan050892/nab-android-development-challenge-weather-forecast.git
+   ```
+3. Enter your API in `local.properties`
+   ```
+   ONE_WEATHER_MAP_APP_ID_KEY={ENTER YOUR APPID - API KEY}
+   ```
+4. Sync gradle, build project using Android Studio and pray... 🙏🏽
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+5. Run the app
+
+6.  if *bang* 💥, then play a mediation music 3 hours mix on youtube, and create an issue on this repository for me here [create issues](https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/issues)
+    else 🎉
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+<<Update Later>>
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+<<Update Later>>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+<<Update Later>>
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+This repository is FREE to use as a source of learning & inspiring other in Android Development Journey. 
+But I ENCOURAGE you to build your own base on this repository for two reasons: 
+- This repository is NOT a perfect repository of all time, you can surely do BETTER THAN ME!
+- The most beautiful & valuable thing is you, yourself, not just the piece of work, but your entire life! 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,9 +169,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Tung Thanh Phan - [Linkedin Profile](https://www.linkedin.com/in/phantung5892/) - phanthanhtung5892@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast](https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
