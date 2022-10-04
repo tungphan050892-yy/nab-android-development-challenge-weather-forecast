@@ -1,9 +1,9 @@
 <!-- PROJECT LOGO -->
-# readme-top
+# Readme Top
 <br />
 <div align="center">
   <a href="https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast">
-    <img src="logoForReadmeDocs/myProfileImage.jpg" alt="Logo" width="120" height="120">
+    <img src="imgForReadmeDocs/myProfileImage.jpg" alt="Logo" width="120" height="120">
   </a>
 
 <h3 align="center">NAB WEATHER FORECAST - TUNG PHAN</h3>
@@ -87,9 +87,6 @@ The project develop in a time box to fill in every requirement in the assignment
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-### Built With
-
 ### Built With (Click the image For Reference)
 
 * <b>Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46</b><br>
@@ -152,7 +149,11 @@ The project develop in a time box to fill in every requirement in the assignment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- MAIN ARCHITECTURE -->
+## Main Architecture
+<div>
+    <img src="imgForReadmeDocs/mainArchitecture.jpg" alt="Main Architecture">
+</div>
 
 <!-- GETTING STARTED -->
 ## Getting Started
