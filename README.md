@@ -95,18 +95,65 @@ The project develop in a time box to fill in every requirement in the assignment
 
 ### Built With
 
-*[![Kotlin][Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46]][Kotlin-url]<br>
-*[![KotlinGradle][Kotlin Gradle,Compiler version: 1.6.10]][Kotlin-url]<br>
-*[![AndroidX][AndroidX]][AndroidX-url]<br>
-*[![JetpackCompose][Other Stuff In Jetpack Compose]][Jetpack-Compose-url]<br>
-*[![Koin][Koin]][Koin-url]<br>
-*[![Firebase][Firebase]][Firebase-url]<br>
-*[![AndroidTest][AndroidTest]][Android-Test-url]<br>
-*[![AndroidTestBestPractice][Android Test Best Practice]][Android-Test-Best-Practice-url]<br>
-*[![Spotless][Spotless]][Spotless-url]<br>
-*[![AndroidStudio][Android Studio]][Android-Studio-url]<br>
-*[![Postman][Postman]][Postman-url]<br>
-*[My Cat]🐈🐈🐈🐈🐈🐈🐈<br>
+### Built With >> Click Image For Reference <<
+
+* <b>Kotlin Plugin in AS version: 212-1.7.0-release-281-AS5457.46</b><br>
+  <a href="https://developer.android.com/kotlin">
+      <img src="https://user-images.githubusercontent.com/107334103/193745662-a6ed5049-2334-47ec-9c5b-3f806675ed78.png" height="100"/>
+  </a>
+
+* <b>Kotlin Gradle,Compiler version: 1.6.10</b><br>
+  <a href="https://developer.android.com/kotlin">
+      <img src="https://user-images.githubusercontent.com/107334103/193745930-bf5729da-cdac-477e-b6e3-779d579fc1b6.png" height="100"/>
+  </a>
+
+* <b>AndroidX</b><br>
+  <a href="https://developer.android.com/jetpack/androidx">
+      <img src="https://user-images.githubusercontent.com/107334103/193746200-61cb45c6-77eb-469a-a0f1-7b134bb7cc26.png" height="100"/>
+  </a>
+  
+* <b>Other Stuff In Jetpack Compose</b><br>
+  <a href="https://developer.android.com/jetpack/compose">
+      <img src="https://user-images.githubusercontent.com/107334103/193746281-75753289-ef9b-4819-b183-fe62d2a67479.png" height="100"/>
+  </a>
+
+* <b>Koin</b><br>
+  <a href="https://insert-koin.io/">
+      <img src="https://user-images.githubusercontent.com/107334103/193746210-674d4ced-ee1d-4a16-975d-240fa2637efc.png" height="100"/>
+  </a>
+
+* <b>Firebase</b><br>
+  <a href="https://firebase.google.com/">
+      <img src="https://user-images.githubusercontent.com/107334103/193746392-157cd7a9-18d8-4569-b18f-4d51cfd73275.png" height="100"/>
+  </a>
+
+* <b>Android Test</b><br>
+  <a href="https://developer.android.com/studio/test">
+      <img src="https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png" height="100"/>
+  </a>
+
+* <b>Android Test Best Practice</b><br>
+  <a href="https://developer.android.com/training/testing">
+      <img src="https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png" height="100"/>
+  </a>
+
+* <b>Spotless</b><br>
+  <a href="https://github.com/diffplug/spotless">
+      <img src="https://user-images.githubusercontent.com/107334103/193746594-0477ed79-a136-40e9-a7c8-fb542be43ec7.png" height="100"/>
+  </a>
+
+* <b>Android Studio</b><br>
+  <a href="https://developer.android.com/studio">
+      <img src="https://user-images.githubusercontent.com/107334103/193745662-a6ed5049-2334-47ec-9c5b-3f806675ed78.png" height="100"/>
+  </a>
+
+* <b>Postman</b><br>
+  <a href="https://www.postman.com/">
+      <img src="https://user-images.githubusercontent.com/107334103/193746673-5c2179f1-a6ca-4760-9f18-eece2fb274e2.png" height="100"/>
+  </a>
+
+* <b>My Cat</b> 🐈🐈🐈🐈🐈🐈🐈<br>
+  <img src="https://user-images.githubusercontent.com/107334103/193752493-a585dc15-603c-4fb8-9bc7-4e231ecc99d5.jpeg" height="300"/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,25 +259,5 @@ Project Link: [https://github.com/tungphan050892/nab-android-development-challen
 [issues-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/issues
 [license-url]: https://github.com/tungphan050892/nab-android-development-challenge-weather-forecast/blob/development/LICENSE.txt
 [linkedin-url]: https://www.linkedin.com/in/phantung5892/
-[Kotlin]: https://user-images.githubusercontent.com/107334103/193745662-a6ed5049-2334-47ec-9c5b-3f806675ed78.png
-[Kotlin-url]: https://developer.android.com/kotlin
-[KotlinGradle]: https://user-images.githubusercontent.com/107334103/193745930-bf5729da-cdac-477e-b6e3-779d579fc1b6.png
-[KotlinGradle-url]: https://developer.android.com/kotlin
-[AndroidX]: https://user-images.githubusercontent.com/107334103/193746200-61cb45c6-77eb-469a-a0f1-7b134bb7cc26.png
-[AndroidX-url]: https://developer.android.com/jetpack/androidx
-[JetpackCompose]: https://user-images.githubusercontent.com/107334103/193746281-75753289-ef9b-4819-b183-fe62d2a67479.png
-[Jetpack-Compose-url]: https://developer.android.com/jetpack/compose
-[Koin]: https://user-images.githubusercontent.com/107334103/193746210-674d4ced-ee1d-4a16-975d-240fa2637efc.png
-[Koin-url]: https://insert-koin.io/
-[Firebase]: https://user-images.githubusercontent.com/107334103/193746392-157cd7a9-18d8-4569-b18f-4d51cfd73275.png
-[Firebase-url]: https://firebase.google.com/
-[AndroidTest]: https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png
-[Android-Test-url]: https://developer.android.com/studio/test
-[AndroidTestBestPractice]: https://user-images.githubusercontent.com/107334103/193746450-8ffa71d9-ca56-44ba-b2d2-989a29984451.png
-[Android-Test-Best-Practice-url]: https://developer.android.com/training/testing
-[Spotless-url]: https://github.com/diffplug/spotless
-[AndroidStudio]: https://user-images.githubusercontent.com/107334103/193746594-0477ed79-a136-40e9-a7c8-fb542be43ec7.png
-[Android-Studio-url]: https://developer.android.com/studio
-[Postman]: https://user-images.githubusercontent.com/107334103/193746673-5c2179f1-a6ca-4760-9f18-eece2fb274e2.png
-[Postman-url]: https://www.postman.com/
+
 
